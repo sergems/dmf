@@ -20,6 +20,21 @@ if (navToggle && siteNav) {
   });
 }
 
+// Mobile dropdown toggle — tap the parent link to open/close submenu
+document.querySelectorAll('.has-dropdown > a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    // Only intercept on mobile (nav toggle visible)
+    if (window.getComputedStyle(navToggle || document.body).display === 'none') return;
+    e.preventDefault();
+    const li = link.closest('.has-dropdown');
+    // Close siblings
+    document.querySelectorAll('.has-dropdown.open').forEach(el => {
+      if (el !== li) el.classList.remove('open');
+    });
+    li.classList.toggle('open');
+  });
+});
+
 // Sticky header shadow on scroll
 const header = document.getElementById('site-header');
 if (header) {

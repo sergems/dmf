@@ -58,6 +58,20 @@ function is_active(string $page): string {
                 <li><a href="/index.php" class="<?= is_active('index') ?>">Home</a></li>
                 <li><a href="/about.php" class="<?= is_active('about') ?>">About Us</a></li>
                 <li><a href="/programs.php" class="<?= is_active('programs') ?>">Programs</a></li>
+                <?php
+                $orphanage_pages = ['orphanage','orphanage-about','orphanage-children','orphanage-support','orphanage-gallery'];
+                $orphanage_active = in_array($current_page, $orphanage_pages) ? 'active' : '';
+                ?>
+                <li class="has-dropdown <?= $orphanage_active ? 'active' : '' ?>">
+                    <a href="/orphanage.php" class="<?= $orphanage_active ?>">Orphanage <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/orphanage.php" class="<?= is_active('orphanage') ?>">Overview</a></li>
+                        <li><a href="/orphanage-about.php" class="<?= is_active('orphanage-about') ?>">About the Orphanage</a></li>
+                        <li><a href="/orphanage-children.php" class="<?= is_active('orphanage-children') ?>">Children at the Orphanage</a></li>
+                        <li><a href="/orphanage-support.php" class="<?= is_active('orphanage-support') ?>">Support the Orphanage</a></li>
+                        <li><a href="/orphanage-gallery.php" class="<?= is_active('orphanage-gallery') ?>">Gallery</a></li>
+                    </ul>
+                </li>
                 <li><a href="/activities.php" class="<?= is_active('activities') ?>">Activities</a></li>
                 <li><a href="/contact.php" class="<?= is_active('contact') ?>">Contact</a></li>
                 <li><a href="<?= h($donate_url) ?>" class="nav-donate-btn" target="_blank" rel="noopener">Donate</a></li>
