@@ -16,7 +16,7 @@ function is_active(string $page): string {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= h($page_title ?? $site_name) ?> <?= isset($page_title) ? '— ' . h($site_name) : '' ?></title>
+    <title><?= h($page_title ?: $site_name) ?><?= $page_title ? ' — ' . h($site_name) : '' ?></title>
     <meta name="description" content="<?= h($meta_desc ?? 'Divine Mercy Foundation — Bringing Hope, Sharing Love, Changing Lives across Cameroon, South Africa, Kenya and Tanzania.') ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
