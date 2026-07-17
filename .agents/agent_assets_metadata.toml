@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "KYXEaft1fpMt2CyLIPsCj"
+uri = "file://divine-mercy-foundation.zip"
+type = "unspecified"
+title = "Divine Mercy Foundation — PHP Website"
