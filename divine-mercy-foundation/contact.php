@@ -83,10 +83,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="contact-regions">
                 <h3>Active Regions</h3>
                 <div class="region-list">
-                    <span class="region-tag">🇨🇲 Yaoundé, Cameroon</span>
-                    <span class="region-tag">🇿🇦 Durban, South Africa</span>
-                    <span class="region-tag">🇰🇪 Kenya</span>
-                    <span class="region-tag">🇹🇿 Tanzania</span>
+                    <span class="region-tag"><img src="https://flagcdn.com/w40/cm.png" alt="Cameroon flag" class="region-flag"> Yaoundé, Cameroon</span>
+                    <span class="region-tag"><img src="https://flagcdn.com/w40/za.png" alt="South Africa flag" class="region-flag"> Durban, South Africa</span>
+                    <span class="region-tag"><img src="https://flagcdn.com/w40/ke.png" alt="Kenya flag" class="region-flag"> Kenya</span>
+                    <span class="region-tag"><img src="https://flagcdn.com/w40/tz.png" alt="Tanzania flag" class="region-flag"> Tanzania</span>
                 </div>
             </div>
         </div>

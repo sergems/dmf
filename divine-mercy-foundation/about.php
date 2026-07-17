@@ -51,10 +51,10 @@ $donate_url = get_setting('donate_url', '#');
             <div class="story-visual">
                 <img src="/assets/images/logo.png" alt="Divine Mercy Foundation" class="story-logo">
                 <div class="story-countries">
-                    <span>🇨🇲 Cameroon</span>
-                    <span>🇿🇦 South Africa</span>
-                    <span>🇰🇪 Kenya</span>
-                    <span>🇹🇿 Tanzania</span>
+                    <span><img src="https://flagcdn.com/w40/cm.png" alt="Cameroon flag" class="region-flag"> Cameroon</span>
+                    <span><img src="https://flagcdn.com/w40/za.png" alt="South Africa flag" class="region-flag"> South Africa</span>
+                    <span><img src="https://flagcdn.com/w40/ke.png" alt="Kenya flag" class="region-flag"> Kenya</span>
+                    <span><img src="https://flagcdn.com/w40/tz.png" alt="Tanzania flag" class="region-flag"> Tanzania</span>
                 </div>
             </div>
         </div>
