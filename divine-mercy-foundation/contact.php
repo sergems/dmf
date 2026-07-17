@@ -1,11 +1,12 @@
 <?php
+require_once 'includes/functions.php';
+require_once 'config.php';
+session_name(ADMIN_SESSION_NAME);
+session_start();
+
 $page_title = 'Contact Us';
 $meta_desc  = 'Get in touch with Divine Mercy Foundation. We would love to hear from you.';
 require_once 'includes/header.php';
-require_once 'includes/functions.php';
-
-session_name(ADMIN_SESSION_NAME);
-session_start();
 
 $success = false;
 $errors  = [];
