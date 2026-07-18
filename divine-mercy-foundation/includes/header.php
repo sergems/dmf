@@ -65,7 +65,7 @@ function is_active(string $page): string {
                 <li class="has-dropdown <?= $orphanage_active ? 'active' : '' ?>">
                     <a href="/orphanage.php" class="<?= $orphanage_active ?>">Orphanage <span class="dropdown-arrow">▾</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/orphanage.php" class="<?= is_active('orphanage') ?>">Overview</a></li>
+                        <li><a href="/orphanage.php" class="<?= is_active('orphanage') ?>">Orphanage</a></li>
                         <li><a href="/orphanage-about.php" class="<?= is_active('orphanage-about') ?>">About the Orphanage</a></li>
                         <li><a href="/orphanage-children.php" class="<?= is_active('orphanage-children') ?>">Children at the Orphanage</a></li>
                         <li><a href="/orphanage-support.php" class="<?= is_active('orphanage-support') ?>">Support the Orphanage</a></li>
