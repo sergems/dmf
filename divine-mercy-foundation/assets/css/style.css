@@ -1215,6 +1215,183 @@ ul { list-style: none; }
 .footer-admin-link { font-size: .75rem; color: rgba(255,255,255,.2); }
 .footer-admin-link:hover { color: rgba(255,255,255,.5); }
 
+/* ── Legal pages ── */
+.legal-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.legal-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem;
+  display: flex; flex-direction: column; gap: .75rem;
+  transition: box-shadow .2s;
+}
+.legal-card:hover { box-shadow: 0 6px 20px rgba(13,31,53,.09); }
+.legal-card-badge {
+  display: inline-block;
+  background: var(--red); color: #fff;
+  font-size: .72rem; font-weight: 700; letter-spacing: .05em;
+  padding: .2rem .65rem; border-radius: 50px;
+  align-self: flex-start;
+}
+.legal-card h3 { font-size: 1.05rem; margin: 0; }
+.legal-card p  { font-size: .88rem; color: var(--text-light); line-height: 1.65; margin: 0; }
+.legal-info-box {
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 1.75rem;
+  color: rgba(255,255,255,.9);
+}
+.legal-info-box h4 { color: #fff; margin-bottom: 1rem; font-size: 1rem; }
+.legal-table { width: 100%; border-collapse: collapse; }
+.legal-table tr + tr td { border-top: 1px solid rgba(255,255,255,.1); }
+.legal-table td { padding: .55rem 0; font-size: .83rem; vertical-align: top; }
+.legal-table td:first-child { color: rgba(255,255,255,.55); width: 42%; padding-right: .75rem; }
+.legal-table td:last-child { color: #fff; font-weight: 500; }
+
+/* ── IRS page ── */
+.irs-status-card {
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 2rem;
+  color: #fff;
+  display: flex; flex-direction: column; gap: .75rem;
+}
+.irs-badge {
+  display: inline-block;
+  background: var(--red);
+  color: #fff;
+  font-size: 1.5rem; font-weight: 800;
+  padding: .5rem 1.25rem;
+  border-radius: 8px;
+  align-self: flex-start;
+  letter-spacing: .03em;
+}
+.irs-status-card h3 { color: #fff; font-size: 1.2rem; margin: .25rem 0 0; }
+.irs-status-card > p { color: rgba(255,255,255,.7); font-size: .88rem; margin: 0; }
+.irs-detail-row {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: .45rem 0;
+  border-top: 1px solid rgba(255,255,255,.1);
+  font-size: .83rem;
+  gap: .5rem;
+}
+.irs-detail-row span { color: rgba(255,255,255,.5); }
+.irs-detail-row strong { color: #fff; text-align: right; }
+
+/* ── Mission page ── */
+.mission-scripture-card {
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 2.25rem;
+  color: #fff;
+  text-align: center;
+  display: flex; flex-direction: column; gap: 1rem; align-items: center;
+}
+.scripture-icon { font-size: 2.5rem; opacity: .5; }
+.mission-scripture-card blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,.9);
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+.mission-scripture-card cite { font-size: .82rem; color: rgba(255,255,255,.5); }
+.mission-quote-block {
+  background: var(--light);
+  border-left: 4px solid var(--red);
+  border-radius: 0 12px 12px 0;
+  padding: 2rem 2rem 2rem 1.75rem;
+  margin: 1rem 0 2rem;
+  max-width: 780px; margin-left: auto; margin-right: auto;
+}
+.mission-quote-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+.mission-scripture-refs {
+  display: flex; flex-wrap: wrap; gap: .4rem;
+}
+.mission-scripture-refs span {
+  background: rgba(200,16,46,.08);
+  color: var(--red);
+  font-size: .75rem; font-weight: 600;
+  padding: .2rem .65rem; border-radius: 50px;
+}
+.mission-verse-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.mission-verse {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+.mission-verse p  { font-style: italic; color: var(--text); line-height: 1.7; margin: 0 0 .5rem; }
+.mission-verse cite { font-size: .78rem; color: var(--text-light); }
+.mission-vision-card {
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 2rem;
+  color: rgba(255,255,255,.9);
+}
+.mission-vision-card h3 { color: #fff; font-size: 1.05rem; margin: 0 0 .75rem; }
+.mission-vision-card p  { font-size: .9rem; line-height: 1.65; margin: 0; }
+.mission-values-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+.mission-values-list li { font-size: .88rem; color: rgba(255,255,255,.85); }
+
+/* ── Reach Out contacts ── */
+.reach-out-contacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.reach-contact-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex; flex-direction: column; gap: .5rem;
+}
+.reach-contact-icon { font-size: 1.75rem; }
+.reach-contact-card h3 { font-size: .95rem; font-weight: 600; margin: 0; }
+.reach-contact-card p  { font-size: .85rem; color: var(--text-light); margin: 0; }
+.reach-contact-card a  { font-size: .85rem; color: var(--red); text-decoration: none; font-weight: 500; }
+.reach-contact-card a:hover { text-decoration: underline; }
+
+/* ── Elderly stats card ── */
+.elderly-stat-card {
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 1.75rem;
+  display: flex; flex-direction: column; gap: 0;
+}
+.elderly-stat-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.elderly-stat-item:last-child { border-bottom: none; }
+.elderly-stat-num {
+  font-size: 2rem; font-weight: 800;
+  color: var(--red); font-family: var(--font-display);
+  margin-bottom: .3rem;
+}
+.elderly-stat-label { font-size: .85rem; color: rgba(255,255,255,.7); line-height: 1.5; }
+
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .stats-grid     { grid-template-columns: repeat(2, 1fr); }

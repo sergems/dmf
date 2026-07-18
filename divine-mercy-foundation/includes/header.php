@@ -56,7 +56,23 @@ function is_active(string $page): string {
         <nav class="site-nav" id="site-nav">
             <ul>
                 <li><a href="/index.php" class="<?= is_active('index') ?>">Home</a></li>
-                <li><a href="/about.php" class="<?= is_active('about') ?>">About Us</a></li>
+                <?php
+                $about_pages = ['about','about-mission','about-reach-out','about-legal','about-legal-cameroon','about-dmf-application','about-irs','about-elderly'];
+                $about_active = in_array($current_page, $about_pages) ? 'active' : '';
+                ?>
+                <li class="has-dropdown <?= $about_active ? 'active' : '' ?>">
+                    <a href="/about.php" class="<?= $about_active ?>">About Us <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/about.php" class="<?= is_active('about') ?>">About Us</a></li>
+                        <li><a href="/about-reach-out.php" class="<?= is_active('about-reach-out') ?>">Reach Out</a></li>
+                        <li><a href="/about-mission.php" class="<?= is_active('about-mission') ?>">Our Mission</a></li>
+                        <li><a href="/about-legal.php" class="<?= is_active('about-legal') ?>">Legal Authorisation</a></li>
+                        <li><a href="/about-legal-cameroon.php" class="<?= is_active('about-legal-cameroon') ?>">Legal / Cameroon</a></li>
+                        <li><a href="/about-dmf-application.php" class="<?= is_active('about-dmf-application') ?>">DMF Application</a></li>
+                        <li><a href="/about-irs.php" class="<?= is_active('about-irs') ?>">IRS Tax Exempt</a></li>
+                        <li><a href="/about-elderly.php" class="<?= is_active('about-elderly') ?>">Support the Elderly &amp; Handicapped</a></li>
+                    </ul>
+                </li>
                 <li><a href="/programs.php" class="<?= is_active('programs') ?>">Programs</a></li>
                 <?php
                 $orphanage_pages = ['orphanage','orphanage-about','orphanage-children','orphanage-support','orphanage-gallery'];
