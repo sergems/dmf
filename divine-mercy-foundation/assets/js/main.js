@@ -20,19 +20,31 @@ if (navToggle && siteNav) {
   });
 }
 
-// Mobile dropdown toggle — tap the parent link to open/close submenu
+// Dropdown toggle — click on desktop and mobile
 document.querySelectorAll('.has-dropdown > a').forEach(link => {
   link.addEventListener('click', (e) => {
-    // Only intercept on mobile (nav toggle visible)
-    if (window.getComputedStyle(navToggle || document.body).display === 'none') return;
     e.preventDefault();
     const li = link.closest('.has-dropdown');
-    // Close siblings
-    document.querySelectorAll('.has-dropdown.open').forEach(el => {
-      if (el !== li) el.classList.remove('open');
-    });
-    li.classList.toggle('open');
+    const isOpen = li.classList.contains('open');
+    // Close all dropdowns first
+    document.querySelectorAll('.has-dropdown.open').forEach(el => el.classList.remove('open'));
+    // Toggle this one
+    if (!isOpen) li.classList.add('open');
   });
+});
+
+// Close dropdown when clicking anywhere outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.has-dropdown')) {
+    document.querySelectorAll('.has-dropdown.open').forEach(el => el.classList.remove('open'));
+  }
+});
+
+// Close dropdown when pressing Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.has-dropdown.open').forEach(el => el.classList.remove('open'));
+  }
 });
 
 // Sticky header shadow on scroll
