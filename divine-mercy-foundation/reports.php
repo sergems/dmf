@@ -16,7 +16,6 @@ require_once 'includes/header.php';
     <div class="container">
         <div class="section-header">
             <span class="section-eyebrow">Financial &amp; Programme Reports</span>
-            <h2>Reports 2021 – 2025</h2>
             <p>Each year Divine Mercy Foundation publishes a report covering our programmes, expenditure and impact across Cameroon, South Africa, Kenya and Tanzania. Download the report for each year below.</p>
         </div>
         <div class="reports-grid">
@@ -28,7 +27,7 @@ require_once 'includes/header.php';
                     <p>Programme outcomes, financial summary and community impact for the 2025 fiscal year.</p>
                 </div>
                 <div class="report-actions">
-                    <span class="report-badge upcoming">Coming Soon</span>
+                    <a href="/assets/documents/report-2025.pdf" target="_blank" class="btn btn-primary report-dl-btn">⬇ Download</a>
                 </div>
             </div>
 
@@ -39,7 +38,7 @@ require_once 'includes/header.php';
                     <p>Programme outcomes, financial summary and community impact for the 2024 fiscal year.</p>
                 </div>
                 <div class="report-actions">
-                    <span class="report-badge upcoming">Coming Soon</span>
+                    <a href="/assets/documents/report-2024.pdf" target="_blank" class="btn btn-primary report-dl-btn">⬇ Download</a>
                 </div>
             </div>
 
