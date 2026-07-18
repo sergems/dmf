@@ -90,6 +90,18 @@ function is_active(string $page): string {
                 </li>
                 <li><a href="/activities.php" class="<?= is_active('activities') ?>">Activities</a></li>
                 <li><a href="/contact.php" class="<?= is_active('contact') ?>">Contact</a></li>
+                <?php
+                $reports_pages = ['reports','education-fund','school-tuition'];
+                $reports_active = in_array($current_page, $reports_pages) ? 'active' : '';
+                ?>
+                <li class="has-dropdown <?= $reports_active ? 'active' : '' ?>">
+                    <a href="/reports.php" class="<?= $reports_active ?>">Reports <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/reports.php" class="<?= is_active('reports') ?>">Reports</a></li>
+                        <li><a href="/school-tuition.php" class="<?= is_active('school-tuition') ?>">School Tuition</a></li>
+                        <li><a href="/education-fund.php" class="<?= is_active('education-fund') ?>">Education Fund</a></li>
+                    </ul>
+                </li>
                 <li><a href="<?= h($donate_url) ?>" class="nav-donate-btn" target="_blank" rel="noopener">Donate</a></li>
             </ul>
         </nav>
