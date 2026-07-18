@@ -1304,6 +1304,19 @@ ul { list-style: none; }
   padding: 0;
 }
 .mission-scripture-card cite { font-size: .82rem; color: rgba(255,255,255,.5); }
+/* ── Mission page blockquote ── */
+.mission-blockquote {
+  border-left: 4px solid var(--red);
+  background: var(--light);
+  border-radius: 0 10px 10px 0;
+  padding: 1.5rem 1.75rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.8;
+  font-size: .97rem;
+}
+
 .mission-quote-block {
   background: var(--light);
   border-left: 4px solid var(--red);
