@@ -179,7 +179,7 @@ ul { list-style: none; }
 .logo-name { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
 .logo-sub  { font-size: .75rem; font-weight: 500; color: var(--red); text-transform: uppercase; letter-spacing: .08em; }
 
-.site-nav ul {
+.site-nav > ul {
   display: flex;
   align-items: center;
   gap: .25rem;
@@ -1239,7 +1239,7 @@ ul { list-style: none; }
     gap: .25rem;
   }
   .site-nav.open { display: flex; }
-  .site-nav ul { flex-direction: column; text-align: center; gap: .25rem; width: 100%; }
+  .site-nav > ul { flex-direction: column; text-align: center; gap: .25rem; width: 100%; }
   .site-nav a {
     color: rgba(255,255,255,.85) !important;
     font-size: 1.2rem;
