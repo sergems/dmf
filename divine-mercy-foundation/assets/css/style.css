@@ -221,9 +221,10 @@ ul { list-style: none; }
   margin-top: 1px;
   display: inline-block;
 }
-.has-dropdown.open > a .dropdown-arrow { transform: rotate(180deg); opacity: .85; }
+.has-dropdown.open > a .dropdown-arrow,
+.has-dropdown:hover > a .dropdown-arrow { transform: rotate(180deg); opacity: .85; }
 
-/* Desktop dropdown — click only, no hover */
+/* Desktop dropdown — opens on hover; JS adds .open for keyboard/mobile */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -250,7 +251,8 @@ ul { list-style: none; }
   border-top: 1px solid rgba(13,31,53,.09);
   transform: rotate(45deg);
 }
-.has-dropdown.open .dropdown-menu { display: flex; }
+.has-dropdown.open .dropdown-menu,
+.has-dropdown:hover > .dropdown-menu { display: flex; }
 .dropdown-menu li { list-style: none; }
 .dropdown-menu a {
   display: block;

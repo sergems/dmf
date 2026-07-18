@@ -20,27 +20,22 @@ if (navToggle && siteNav) {
   });
 }
 
-// Dropdown toggle — click on desktop and mobile
+// Dropdown: hover on desktop (CSS handles it), click-toggle on mobile only
 document.querySelectorAll('.has-dropdown > a').forEach(link => {
   link.addEventListener('click', (e) => {
+    // On desktop the nav-toggle is hidden — hover handles the dropdown, let the link navigate normally
+    const toggle = document.getElementById('nav-toggle');
+    const isMobile = toggle && window.getComputedStyle(toggle).display !== 'none';
+    if (!isMobile) return; // let browser follow the href
     e.preventDefault();
     const li = link.closest('.has-dropdown');
     const isOpen = li.classList.contains('open');
-    // Close all dropdowns first
     document.querySelectorAll('.has-dropdown.open').forEach(el => el.classList.remove('open'));
-    // Toggle this one
     if (!isOpen) li.classList.add('open');
   });
 });
 
-// Close dropdown when clicking anywhere outside
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.has-dropdown')) {
-    document.querySelectorAll('.has-dropdown.open').forEach(el => el.classList.remove('open'));
-  }
-});
-
-// Close dropdown when pressing Escape
+// Close .open class when pressing Escape
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     document.querySelectorAll('.has-dropdown.open').forEach(el => el.classList.remove('open'));
