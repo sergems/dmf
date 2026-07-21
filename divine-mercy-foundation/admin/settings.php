@@ -18,8 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ];
         foreach ($fields as $field) {
             $val = trim($_POST[$field] ?? '');
-            $stmt = $pdo->prepare("INSERT INTO settings (setting_key, setting_value) VALUES (?,?)
-                ON DUPLICATE KEY UPDATE setting_value=VALUES(setting_value)");
+            if (DB_DRIVER === 'sqlite') {
+                $stmt = $pdo->prepare("INSERT OR REPLACE INTO settings (setting_key, setting_value) VALUES (?,?)");
+            } else {
+                $stmt = $pdo->prepare("INSERT INTO settings (setting_key, setting_value) VALUES (?,?)
+                    ON DUPLICATE KEY UPDATE setting_value=VALUES(setting_value)");
+            }
             $stmt->execute([$field, $val]);
         }
 
