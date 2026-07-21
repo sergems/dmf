@@ -1,59 +1,50 @@
-# Divine Mercy Foundation Website
+# Divine Mercy Foundation — Website
 
-A complete PHP + MySQL nonprofit website with a public-facing site and an admin panel for Divine Mercy Foundation.
+A PHP 8.2 website for Divine Mercy Foundation with a full admin panel.
 
-## Run & Operate
+## How to run
 
-- **Preview (SQLite, no DB setup needed):** `cd divine-mercy-foundation && PREVIEW_MODE=1 php -S 0.0.0.0:5000`
-  - This is the default Replit workflow. Just hit **Run**.
-  - Uses `divine-mercy-foundation/preview.db` (SQLite) — no MySQL required.
-- **Production:** Requires MySQL. Update `divine-mercy-foundation/config.php` with your DB credentials, then import `divine-mercy-foundation/database.sql`.
+The **"Divine Mercy Foundation"** workflow starts the site. It uses PHP's built-in server with SQLite in preview mode — no MySQL needed on Replit.
 
-## Admin Panel
+```
+cd divine-mercy-foundation && PREVIEW_MODE=1 php -S 0.0.0.0:5000
+```
 
-- URL: `/admin/login.php`
-- Default credentials are seeded by `init-preview-db.php` (preview mode only).
+Open the preview pane to see the live site.
 
-## Stack
+## Admin panel
 
-- PHP 8.2, SQLite (preview) / MySQL (production)
-- PDO for all DB queries (prepared statements)
-- Session-based admin auth with bcrypt passwords
-- Vanilla JS + CSS (no build step)
+Visit `/admin/` in the preview.
 
-## Where things live
+- **Username:** `admin`
+- **Password:** `Admin@2024`
 
-- `divine-mercy-foundation/config.php` — database & site config (edit for production)
-- `divine-mercy-foundation/database.sql` — MySQL schema + seed data (run once for production)
-- `divine-mercy-foundation/init-preview-db.php` — initialises the SQLite preview DB
-- `divine-mercy-foundation/includes/` — shared PHP components (db, functions, header, footer)
-- `divine-mercy-foundation/admin/` — admin panel (login, dashboard, news, messages, settings)
-- `divine-mercy-foundation/assets/` — CSS, JS, images, documents
+Change the password in Settings → Change Password after first login.
 
-## Pages
+## Project layout
 
-| URL | Description |
-|-----|-------------|
-| `/` | Homepage |
-| `/about.php` | About the foundation |
-| `/programs.php` | Programs overview |
-| `/activities.php` | News & activities listing |
-| `/contact.php` | Contact form |
-| `/donate.php` | Donation page |
-| `/admin/` | Admin panel |
+```
+divine-mercy-foundation/   PHP website source
+  config.php               DB + site config (PREVIEW_MODE=1 uses SQLite)
+  preview.db               SQLite database (used in Replit preview)
+  database.sql             MySQL schema (for production hosting)
+  admin/                   Admin panel
+  includes/                Shared PHP components (db, header, footer)
+  assets/                  CSS, JS, images
+artifacts/api-server/      Node.js proxy (used in production deployment only)
+```
 
-## Architecture decisions
+## Database
 
-- Preview mode (`PREVIEW_MODE=1`) swaps MySQL for SQLite so the site runs on Replit without any external database.
-- All DB access goes through `get_db()` in `includes/db.php` — both SQLite and MySQL use the same PDO interface.
-- CSRF tokens, bcrypt passwords, and `htmlspecialchars()` throughout for security.
+- **Preview (Replit):** SQLite at `divine-mercy-foundation/preview.db` — auto-used when `PREVIEW_MODE=1`
+- **Production:** MySQL — configure credentials in `divine-mercy-foundation/config.php`
+
+## Production deployment
+
+For a live hosting provider (cPanel, VPS, etc.):
+1. Set MySQL credentials in `config.php`
+2. Import `database.sql` into your MySQL database
+3. Upload `divine-mercy-foundation/` to your web root
+4. Set `chmod 755 uploads/`
 
 ## User preferences
-
-_Populate as needed._
-
-## Gotchas
-
-- Run `php init-preview-db.php` (from the `divine-mercy-foundation/` directory) to reset the preview SQLite database.
-- The `.htaccess` file is for Apache; the PHP built-in server used in preview mode does not support mod_rewrite, so URL rewriting is not active in preview.
-- For production, set `error_reporting(0)` and `display_errors = 0` in `config.php`.
