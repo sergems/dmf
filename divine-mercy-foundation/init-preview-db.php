@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS contact_messages (
 
 // Admin user  (password: Admin@2024)
 $db->exec("INSERT OR IGNORE INTO admin_users (username, password_hash, full_name, email) VALUES
-('admin', '\$2y\$12\$QsPYoQE6u5XFiqOPJG1KNuaTq8dHRnC5KLuFJnF5PdEfwXRj.W6ay', 'Site Administrator', 'admin@divinemercyfoundationfrbz.org')");
+('admin', '\$2y\$12\$BOt0Ou4.78EGrrhmDUvO/OoGjI2jaZzYJrEsZpXpUDALzKVU5QiaS', 'Site Administrator', 'admin@divinemercyfoundationfrbz.org')");
 
 // Settings
 $settings = [
