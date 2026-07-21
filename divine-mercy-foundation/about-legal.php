@@ -48,22 +48,18 @@ require_once 'includes/header.php';
         </div>
         <div class="programs-grid">
             <div class="program-card">
-                <div class="program-card-icon">📋</div>
                 <h3>Annual Reporting</h3>
                 <p>The Foundation files annual Form 990 returns with the IRS as required for all tax-exempt organisations, ensuring full financial transparency to the public.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🔍</div>
                 <h3>Financial Oversight</h3>
                 <p>All funds are managed under strict financial controls with independent accounting oversight. Donations are used exclusively for charitable purposes.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">📜</div>
                 <h3>Articles of Incorporation</h3>
                 <p>The Foundation's articles of incorporation and bylaws establish its charitable purpose and governance structure in accordance with applicable law.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🏛️</div>
                 <h3>Charitable Purpose</h3>
                 <p>The Foundation exclusively serves charitable purposes including relief of poverty, education, and spiritual formation — in strict compliance with 501(c)(3) requirements.</p>
             </div>

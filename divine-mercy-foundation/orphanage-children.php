@@ -98,22 +98,18 @@ require_once 'includes/header.php';
         </div>
         <div class="programs-grid">
             <div class="program-card">
-                <div class="program-card-icon">🛏️</div>
                 <h3>Beds & Bedding</h3>
                 <p>More beds and bedding are needed as the number of children in the orphanage grows. Every child deserves a proper place to sleep.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">👕</div>
                 <h3>Clothing</h3>
                 <p>Many children arrive with little more than the clothes on their backs. Donations of clothing — especially school uniforms — are urgently needed.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">📖</div>
                 <h3>School Supplies</h3>
                 <p>Notebooks, pens, backpacks and textbooks are needed for every child enrolled in school. Education begins with having the right tools.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🏗️</div>
                 <h3>Building Completion</h3>
                 <p>The orphanage building still requires funding to complete additional rooms, roofing, and facilities that will accommodate more children.</p>
             </div>

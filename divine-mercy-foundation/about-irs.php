@@ -47,32 +47,26 @@ require_once 'includes/header.php';
         </div>
         <div class="programs-grid">
             <div class="program-card">
-                <div class="program-card-icon">💰</div>
                 <h3>Tax Deductible Gifts</h3>
                 <p>Donations made to Divine Mercy Foundation are deductible from your US federal taxable income if you itemise deductions. This effectively reduces the after-tax cost of your gift.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">📄</div>
                 <h3>Donation Receipts</h3>
                 <p>Every donor receives an official written acknowledgment of their contribution. This receipt contains all the information required by the IRS for your tax records.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🏢</div>
                 <h3>Corporate Matching</h3>
                 <p>Many employers match their employees' charitable contributions. Because we hold 501(c)(3) status, your employer may match your gift to Divine Mercy Foundation — doubling your impact.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">📦</div>
                 <h3>Non-Cash Donations</h3>
                 <p>Donations of goods, property, or securities may also be tax-deductible. Please contact us before making a non-cash gift so we can assist you in properly documenting it.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">📅</div>
                 <h3>Year-End Giving</h3>
                 <p>Donations must be made by December 31st of the tax year to be deductible for that year. Plan your year-end giving with Divine Mercy Foundation and make a lasting impact.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">📜</div>
                 <h3>Estate &amp; Planned Giving</h3>
                 <p>Consider including Divine Mercy Foundation in your will or estate plan. A planned gift leaves a lasting legacy of mercy for future generations. Contact us for more information.</p>
             </div>

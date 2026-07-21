@@ -22,25 +22,21 @@ require_once 'includes/header.php';
         </div>
         <div class="programs-grid">
             <div class="program-card">
-                <div class="program-card-icon">🍲</div>
                 <h3>Feeding – Soup Kitchen</h3>
                 <p>Our soup kitchen feeds hungry families and individuals in communities across Cameroon. Every meal served is an act of mercy. Your support keeps it running.</p>
                 <a href="/contact.php" class="btn btn-outline" style="margin-top:1rem;">Support This</a>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">📚</div>
                 <h3>Distribution of Tuition &amp; School Mattresses</h3>
                 <p>We distribute school fees, learning materials, and mattresses to orphaned and underprivileged children so they can attend school and rest properly.</p>
                 <a href="/contact.php" class="btn btn-outline" style="margin-top:1rem;">Support This</a>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">⛪</div>
                 <h3>Small Chapel — Village of Ebomkop II</h3>
                 <p>We are building a small chapel for the rural village of Ebomkop II to provide a place of worship, community and spiritual formation for the local population.</p>
                 <a href="/contact.php" class="btn btn-outline" style="margin-top:1rem;">Support This</a>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">👴</div>
                 <h3>Support the Elderly &amp; Handicapped</h3>
                 <p>We recruit and organise volunteer care teams to assist elderly and disabled individuals abandoned in rural communities across Cameroon.</p>
                 <a href="/about-elderly.php" class="btn btn-outline" style="margin-top:1rem;">Learn More</a>
@@ -59,17 +55,14 @@ require_once 'includes/header.php';
         </div>
         <div class="programs-grid">
             <div class="program-card">
-                <div class="program-card-icon">🍽️</div>
                 <h3>Soup Kitchen</h3>
                 <p>Provides hot meals to an estimated <strong>50–100 beneficiaries per week</strong>, including children, elderly individuals, and families in crisis.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🎒</div>
                 <h3>School Support</h3>
                 <p>Tuition, mattresses and school supplies distributed to <strong>30–60 children per term</strong> across orphanages and rural schools.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🏚️</div>
                 <h3>Elderly Care</h3>
                 <p>Volunteer teams visit and assist <strong>20+ elderly and handicapped individuals</strong> in rural Cameroon each month.</p>
             </div>

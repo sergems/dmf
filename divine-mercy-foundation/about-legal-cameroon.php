@@ -48,32 +48,26 @@ require_once 'includes/header.php';
         </div>
         <div class="programs-grid">
             <div class="program-card">
-                <div class="program-card-icon">🏠</div>
                 <h3>Orphanage Operations</h3>
                 <p>We are authorised to establish, manage, and fund orphanage facilities providing shelter, care, and education to vulnerable children across Cameroon.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🍲</div>
                 <h3>Food Distribution</h3>
                 <p>We are permitted to run soup kitchens and food distribution programmes in partnership with local communities and parishes.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">📚</div>
                 <h3>Educational Support</h3>
                 <p>Distribution of school materials, payment of tuition fees, and educational capacity-building programmes for underprivileged youth.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">👴</div>
                 <h3>Elderly &amp; Disability Care</h3>
                 <p>Volunteer-led care teams supporting elderly and physically or mentally disabled individuals in rural Cameroonian communities.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">⛪</div>
                 <h3>Community Infrastructure</h3>
                 <p>Construction and support of small community chapels and gathering spaces, including in the village of Ebomkop II.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🤝</div>
                 <h3>Volunteer Mobilisation</h3>
                 <p>Recruitment and coordination of local volunteers, particularly youth, to serve as care-givers, health workers, and community assistants.</p>
             </div>

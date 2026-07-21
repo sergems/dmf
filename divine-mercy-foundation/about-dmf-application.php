@@ -22,32 +22,26 @@ require_once 'includes/header.php';
         </div>
         <div class="programs-grid">
             <div class="program-card">
-                <div class="program-card-icon">🎓</div>
                 <h3>Education Support</h3>
                 <p>Students from low-income families in Cameroon may apply for school fee assistance, supply kits, and mattress distribution through our education programme.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🏠</div>
                 <h3>Orphanage Placement</h3>
                 <p>Applications for children in need of placement in our orphanage facility are reviewed by our local team in Cameroon in coordination with community leaders.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🍲</div>
                 <h3>Food Assistance</h3>
                 <p>Individuals and families facing food insecurity in our operational areas may apply for inclusion in our soup kitchen and food distribution programme.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">👴</div>
                 <h3>Elderly Care</h3>
                 <p>Families or social workers may refer elderly or handicapped individuals in rural Cameroon for support from our volunteer care teams.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🤝</div>
                 <h3>Volunteer Application</h3>
                 <p>Individuals wishing to serve as volunteers — locally or internationally — may apply through our volunteer programme. Skills in nursing, teaching, and construction are especially welcome.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🏢</div>
                 <h3>Organisational Partnership</h3>
                 <p>Churches, schools, NGOs, and businesses who wish to collaborate with us on programmes, fundraising, or capacity-building may submit a partnership application.</p>
             </div>

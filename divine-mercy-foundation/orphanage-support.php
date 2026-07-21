@@ -24,25 +24,21 @@ $donate_url = get_setting('donate_url', 'https://buy.stripe.com/9AQ00121AeUD9os2
         </div>
         <div class="programs-grid">
             <div class="program-card">
-                <div class="program-card-icon">💳</div>
                 <h3>One-Time Donation</h3>
                 <p>Any amount helps. A one-time gift goes directly toward food, clothing, building materials, school supplies, and day-to-day care for the children.</p>
                 <a href="<?= h($donate_url) ?>" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1rem;">Donate Now</a>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">📅</div>
                 <h3>Monthly Giving</h3>
                 <p>A monthly gift — even $10 or $25 — provides consistent support that we can plan around. Recurring donors are the backbone of our orphanage operations.</p>
                 <a href="<?= h($donate_url) ?>" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1rem;">Give Monthly</a>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">👧</div>
                 <h3>Sponsor a Child</h3>
                 <p>Sponsor a specific child's education, meals, and care. You'll know exactly who you're helping and receive updates on their progress and well-being.</p>
                 <a href="/contact.php" class="btn btn-outline" style="margin-top:1rem;">Contact Us</a>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🏗️</div>
                 <h3>Building Fund</h3>
                 <p>Donate specifically to complete the orphanage building — additional rooms, roofing, windows, and facilities are still needed to house more children.</p>
                 <a href="<?= h($donate_url) ?>" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1rem;">Fund the Build</a>

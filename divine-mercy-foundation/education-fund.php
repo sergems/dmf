@@ -56,22 +56,18 @@ require_once 'includes/header.php';
         </div>
         <div class="programs-grid">
             <div class="program-card">
-                <div class="program-card-icon">👶</div>
                 <h3>Choose a Child</h3>
                 <p>Browse our school tuition list to see the children who need support. Each child's name, school, class and tuition amount is listed.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">💳</div>
                 <h3>Make a Donation</h3>
                 <p>Donate by scanning the QR code, writing a cheque to Divine Mercy Foundation, or sending funds to our Texas address.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">📚</div>
                 <h3>Change a Life</h3>
                 <p>Your gift covers tuition, uniforms and feeding — giving a child the chance to learn, grow, and build a future with dignity.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🔁</div>
                 <h3>Long-Term Sponsorship</h3>
                 <p>You may choose to adopt a child as a long-term sponsor, supporting them all the way through to the end of their education.</p>
             </div>

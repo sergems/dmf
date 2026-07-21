@@ -51,22 +51,18 @@ require_once 'includes/header.php';
         </div>
         <div class="programs-grid">
             <div class="program-card">
-                <div class="program-card-icon">🧹</div>
                 <h3>Daily Care Volunteers</h3>
                 <p>Young volunteers serve as care-givers who bathe the elderly, gather firewood, clean their homes, and prepare food — restoring basic dignity and comfort.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🩺</div>
                 <h3>Health Checks</h3>
                 <p>Volunteer nurses conduct basic health assessments, administer treatments and medications, and refer individuals to medical facilities when needed.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🤝</div>
                 <h3>Companionship</h3>
                 <p>Beyond physical care, volunteers provide human companionship — conversation, prayer, and emotional presence — to those who are deeply isolated and lonely.</p>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">♿</div>
                 <h3>Disability Support</h3>
                 <p>People with physical and mental disabilities are a special concern. We attend to them to the minimum of our abilities and work toward better ways to address their unique challenges.</p>
             </div>
@@ -83,19 +79,16 @@ require_once 'includes/header.php';
         </div>
         <div class="programs-grid">
             <div class="program-card">
-                <div class="program-card-icon">💳</div>
                 <h3>Donate</h3>
                 <p>Your donation funds transport costs for volunteers, medical supplies, food, and other essentials for the elderly individuals we serve.</p>
                 <a href="<?= h(get_setting('donate_url','#')) ?>" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1rem;">Donate Now</a>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">🙋</div>
                 <h3>Volunteer</h3>
                 <p>If you are based in Cameroon or willing to travel, we welcome volunteers — especially those with medical, nursing, or social care backgrounds.</p>
                 <a href="/contact.php" class="btn btn-outline" style="margin-top:1rem;">Apply to Volunteer</a>
             </div>
             <div class="program-card">
-                <div class="program-card-icon">📢</div>
                 <h3>Raise Awareness</h3>
                 <p>Share this programme with your network. The more people know about the crisis of abandoned elderly in rural Cameroon, the more support we can mobilise.</p>
                 <a href="/contact.php" class="btn btn-outline" style="margin-top:1rem;">Partner With Us</a>

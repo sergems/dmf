@@ -590,8 +590,8 @@ ul { list-style: none; }
 /* ── Programs Grid ── */
 .programs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.25rem;
 }
 .program-card {
   background: var(--white);
@@ -1522,7 +1522,6 @@ ul { list-style: none; }
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .stats-grid     { grid-template-columns: repeat(2, 1fr); }
-  .programs-grid  { grid-template-columns: repeat(2, 1fr); }
   .values-grid    { grid-template-columns: repeat(2, 1fr); }
   .steps-grid     { grid-template-columns: repeat(2, 1fr); }
   .footer-grid    { grid-template-columns: 1fr 1fr; }
