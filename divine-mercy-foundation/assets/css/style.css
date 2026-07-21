@@ -213,6 +213,17 @@ ul { list-style: none; }
 
 /* ── Dropdown nav ── */
 .has-dropdown { position: relative; }
+/* Invisible bridge that fills the gap between the nav item and the dropdown,
+   keeping :hover active so the mouse can travel down without losing the menu */
+.has-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 10px; /* slightly more than the 8px gap */
+  display: block;
+}
 .has-dropdown > a { display: flex; align-items: center; gap: .22rem; cursor: pointer; }
 .dropdown-arrow {
   font-size: .58rem;
