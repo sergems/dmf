@@ -47,15 +47,4 @@ require_once 'includes/header.php';
         </div>
     </div>
 </section>
-
-<section class="impact-banner">
-    <div class="container impact-inner">
-        <div class="impact-text">
-            <h2>Education is the Best Gift</h2>
-            <p>Not every child has the chance to afford school. Your gift makes the difference between a child's future and no future at all.</p>
-        </div>
-        <a href="<?= h(get_setting('donate_url','#')) ?>" target="_blank" rel="noopener" class="btn btn-white">Give Today</a>
-    </div>
-</section>
-
 <?php require_once 'includes/footer.php'; ?>

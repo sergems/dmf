@@ -114,15 +114,4 @@ require_once 'includes/header.php';
         </div>
     </div>
 </section>
-
-<section class="impact-banner">
-    <div class="container impact-inner">
-        <div class="impact-text">
-            <h2>Every Connection Matters</h2>
-            <p>Whether you donate, volunteer, or simply spread the word — your reach extends ours. Thank you.</p>
-        </div>
-        <a href="<?= h(get_setting('donate_url','#')) ?>" target="_blank" rel="noopener" class="btn btn-white">Donate Now</a>
-    </div>
-</section>
-
 <?php require_once 'includes/footer.php'; ?>

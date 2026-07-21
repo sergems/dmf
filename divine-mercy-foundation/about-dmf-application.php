@@ -123,15 +123,4 @@ require_once 'includes/header.php';
         </div>
     </div>
 </section>
-
-<section class="impact-banner">
-    <div class="container impact-inner">
-        <div class="impact-text">
-            <h2>We Are Here for You</h2>
-            <p>Whether you need help or want to help — Divine Mercy Foundation has a place for you. Reach out today.</p>
-        </div>
-        <a href="/contact.php" class="btn btn-white">Contact Us</a>
-    </div>
-</section>
-
 <?php require_once 'includes/footer.php'; ?>

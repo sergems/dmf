@@ -108,15 +108,4 @@ require_once 'includes/header.php';
         </div>
     </div>
 </section>
-
-<section class="impact-banner">
-    <div class="container impact-inner">
-        <div class="impact-text">
-            <h2>Serving Cameroon with Integrity</h2>
-            <p>Every programme we run in Cameroon is conducted legally, transparently, and in partnership with the local community.</p>
-        </div>
-        <a href="/contact.php" class="btn btn-white">Get In Touch</a>
-    </div>
-</section>
-
 <?php require_once 'includes/footer.php'; ?>

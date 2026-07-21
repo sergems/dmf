@@ -113,16 +113,6 @@ $stats = [
 </section>
 
 <!-- IMPACT BANNER -->
-<section class="impact-banner">
-    <div class="container impact-banner-inner">
-        <div class="impact-text">
-            <h2>Since 2016, we have helped <em>700+ children</em> attend school across Cameroon, South Africa, Kenya &amp; Tanzania.</h2>
-            <p>And we are just getting started. With your support, we can reach thousands more.</p>
-        </div>
-        <a href="<?= h($donate_url) ?>" target="_blank" rel="noopener" class="btn btn-white btn-lg">Make a Difference</a>
-    </div>
-</section>
-
 <!-- LATEST NEWS -->
 <?php if ($latest_news): ?>
 <section class="section section-white">

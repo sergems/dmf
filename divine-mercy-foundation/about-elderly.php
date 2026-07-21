@@ -105,14 +105,4 @@ require_once 'includes/header.php';
 </section>
 
 <!-- Plea -->
-<section class="impact-banner">
-    <div class="container impact-inner">
-        <div class="impact-text">
-            <h2>"Please Help These Children of God"</h2>
-            <p>Some die alone and abandoned. Your support means a volunteer will visit, a meal will be cooked, a hand will be held. Please — assist these children of God who need us most.</p>
-        </div>
-        <a href="<?= h(get_setting('donate_url','#')) ?>" target="_blank" rel="noopener" class="btn btn-white">Give Now</a>
-    </div>
-</section>
-
 <?php require_once 'includes/footer.php'; ?>

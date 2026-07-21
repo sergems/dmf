@@ -89,14 +89,4 @@ require_once 'includes/header.php';
 </section>
 
 <!-- CTA -->
-<section class="impact-banner">
-    <div class="container impact-inner">
-        <div class="impact-text">
-            <h2>Be Part of This Story</h2>
-            <p>The orphanage is still growing. Your support today helps complete the building, feed the children, and secure their future.</p>
-        </div>
-        <a href="/orphanage-support.php" class="btn btn-white">Support the Orphanage</a>
-    </div>
-</section>
-
 <?php require_once 'includes/footer.php'; ?>

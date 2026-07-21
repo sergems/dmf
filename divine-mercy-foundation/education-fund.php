@@ -78,15 +78,4 @@ require_once 'includes/header.php';
         </div>
     </div>
 </section>
-
-<section class="impact-banner">
-    <div class="container impact-inner">
-        <div class="impact-text">
-            <h2>Education Changes Everything</h2>
-            <p>A child who receives an education breaks the cycle of poverty — for themselves, their family, and their community.</p>
-        </div>
-        <a href="/school-tuition.php" class="btn btn-white">See Tuition List</a>
-    </div>
-</section>
-
 <?php require_once 'includes/footer.php'; ?>

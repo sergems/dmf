@@ -94,15 +94,4 @@ require_once 'includes/header.php';
         </div>
     </div>
 </section>
-
-<section class="impact-banner">
-    <div class="container impact-inner">
-        <div class="impact-text">
-            <h2>Give Generously — and Benefit Too</h2>
-            <p>Your tax-deductible gift to Divine Mercy Foundation changes lives and reduces your tax burden. It is truly a gift that gives twice.</p>
-        </div>
-        <a href="<?= h(get_setting('donate_url','#')) ?>" target="_blank" rel="noopener" class="btn btn-white">Donate Now</a>
-    </div>
-</section>
-
 <?php require_once 'includes/footer.php'; ?>

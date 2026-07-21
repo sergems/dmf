@@ -187,15 +187,4 @@ require_once 'includes/header.php';
         </div>
     </div>
 </section>
-
-<section class="impact-banner">
-    <div class="container impact-inner">
-        <div class="impact-text">
-            <h2>Help Write the Next Chapter</h2>
-            <p>These photos show how far we've come. With your support, the next chapter will be even better.</p>
-        </div>
-        <a href="/orphanage-support.php" class="btn btn-white">Support the Orphanage</a>
-    </div>
-</section>
-
 <?php require_once 'includes/footer.php'; ?>

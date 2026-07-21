@@ -109,14 +109,4 @@ $donate_url = get_setting('donate_url', 'https://buy.stripe.com/9AQ00121AeUD9os2
 </section>
 
 <!-- CTA banner -->
-<section class="impact-banner">
-    <div class="container impact-inner">
-        <div class="impact-text">
-            <h2>Be the Reason a Child Smiles Today</h2>
-            <p>Every donation, no matter the amount, helps us provide food, shelter, schooling, and emotional support to children who need it most.</p>
-        </div>
-        <a href="<?= h($donate_url) ?>" target="_blank" rel="noopener" class="btn btn-white">Donate Now</a>
-    </div>
-</section>
-
 <?php require_once 'includes/footer.php'; ?>
