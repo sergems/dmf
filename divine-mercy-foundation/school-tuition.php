@@ -2,6 +2,7 @@
 $page_title = 'School Tuition List';
 $meta_desc  = 'Divine Mercy Foundation School Tuition List — children sponsored for education in Cameroon and South Africa.';
 require_once 'includes/header.php';
+$tuition_intro = get_page_content('school_tuition_intro');
 ?>
 
 <section class="page-hero">
@@ -14,7 +15,7 @@ require_once 'includes/header.php';
 
 <section class="section section-white">
     <div class="container" style="max-width:820px;">
-        <p>The document below contains the full list of children that Divine Mercy Foundation is sponsoring for school tuition. Each child's name, date of birth, school, class, and tuition amount is recorded. You may download the PDF to view the complete list and choose a child to sponsor.</p>
+        <p><?= nl2br(h($tuition_intro['content'])) ?></p>
 
         <div class="pdf-viewer-block">
             <div class="pdf-viewer-header">

@@ -3,7 +3,8 @@ $page_title = 'Support the Orphanage';
 $meta_desc  = 'Support the Divine Mercy Foundation Orphanage — donate, sponsor a child, or volunteer to help vulnerable children in Cameroon.';
 require_once 'includes/header.php';
 require_once 'includes/db.php';
-$donate_url = get_setting('donate_url', 'https://buy.stripe.com/9AQ00121AeUD9os288');
+$donate_url         = get_setting('donate_url', 'https://buy.stripe.com/9AQ00121AeUD9os288');
+$orphanage_volunteer = get_page_content('orphanage_volunteer_text');
 ?>
 
 <section class="page-hero">
@@ -92,8 +93,7 @@ $donate_url = get_setting('donate_url', 'https://buy.stripe.com/9AQ00121AeUD9os2
         <div class="section-split-text">
             <span class="section-eyebrow">Get Involved</span>
             <h2>More Than Money — Your Time Matters Too</h2>
-            <p>We welcome volunteers, professionals, and organisations who want to contribute their time and skills. Whether you're a teacher, doctor, builder, fundraiser, or simply someone with a heart to serve — there is a place for you.</p>
-            <p>We also partner with churches, schools, community groups, and businesses who want to make a collective impact. Get in touch and let's talk about how we can work together.</p>
+            <p><?= nl2br(h($orphanage_volunteer['content'])) ?></p>
             <div style="margin-top:2rem;">
                 <a href="/contact.php" class="btn btn-primary">Contact Us to Volunteer</a>
             </div>

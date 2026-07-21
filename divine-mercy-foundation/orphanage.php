@@ -3,6 +3,8 @@ $page_title = 'Orphanage — Orphanage Elizabeth Sana, Yaoundé';
 $meta_desc  = 'Divine Mercy Foundation is constructing Orphanage Elizabeth Sana in Yaoundé, Cameroon — a safe, permanent home for 80 vulnerable children. Follow our progress.';
 $current_page = 'orphanage';
 require_once 'includes/header.php';
+$orphanage_progress = get_page_content('orphanage_progress_update');
+$orphanage_about    = get_page_content('orphanage_about_project');
 ?>
 
 <section class="page-hero">
@@ -19,8 +21,7 @@ require_once 'includes/header.php';
         <div class="section-split-text">
             <span class="section-eyebrow">Progress Update</span>
             <h2>Building a Home, Step by Step</h2>
-            <p>We would like to share the progress update of our orphanage. The water tank has been successfully installed, electricity has also been installed. We would like to thank everyone that has donated so far to make this come true — we are truly grateful.</p>
-            <p style="margin-top:1rem;">Every day, Divine Mercy Foundation provides love, care, education, and a brighter future for vulnerable children — and we still need you.</p>
+            <p><?= nl2br(h($orphanage_progress['content'])) ?></p>
             <div class="hero-actions" style="margin-top:1.75rem;">
                 <a href="/orphanage-support.php" class="btn btn-primary">Support the Orphanage</a>
                 <a href="/orphanage-gallery.php" class="btn btn-outline">View Gallery</a>
@@ -68,10 +69,7 @@ require_once 'includes/header.php';
             <h2>Our Mission — No Discrimination</h2>
         </div>
         <div style="max-width:800px; margin:0 auto; font-size:1.05rem; line-height:1.85; color:var(--text-light);">
-            <p>Divine Mercy Foundation is making steady progress in constructing its orphanage in Cameroon, which will provide a safe and nurturing home for <strong>80 children</strong> — boys and girls — from across Africa. Currently, we are supporting 60 children who remain with guardians by covering their feeding and tuition expenses, costing approximately <strong>$3,500 monthly</strong>.</p>
-            <p style="margin-top:1rem;">The orphanage operates under the <strong>Child Protection Act</strong>, with a certified social worker, a qualified nurse, and thoroughly vetted and trained staff ensuring child safety and care. Construction has been paused due to a lack of funds, despite significant progress so far. We appeal for donations to help us complete this vital project and provide a permanent sanctuary for these children.</p>
-            <p style="margin-top:1rem;">We thank you all for your support in building this orphanage with us. We are progressing with you. Please help us finalize the project through your generous contributions.</p>
-            <p style="margin-top:1rem; font-style:italic; color:var(--navy);">Divine Mercy Foundation — Orphanage Elizabeth Sana, Yaoundé, Cameroon.</p>
+            <p><?= nl2br(h($orphanage_about['content'])) ?></p>
         </div>
     </div>
 </section>

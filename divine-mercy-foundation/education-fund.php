@@ -2,6 +2,7 @@
 $page_title = 'Education Fund';
 $meta_desc  = 'Divine Mercy Foundation Education Fund — sponsor a child\'s education in Cameroon with tuition, uniforms and feeding support.';
 require_once 'includes/header.php';
+$edu_intro = get_page_content('education_fund_intro');
 ?>
 
 <section class="page-hero">
@@ -15,13 +16,7 @@ require_once 'includes/header.php';
 <section class="section section-white">
     <div class="container" style="max-width:820px;">
 
-        <p>Education is the best gift we can give to every child. However not every child has the chance to afford education.</p>
-
-        <p>We have orphans and very disadvantaged kids whom we are helping for tuition, uniforms, and feeding.</p>
-
-        <p>Please support one child of your choice; You may choose to adopt one to sponsor him/her till they finish their education. Please donate by scanning our QR code below or write a check to Divine mercy Foundation, Fr. Georges Roger Bidzogo sac (email it to Holy Redeemer Catholic Church, 1227 East Bristol Road, MI 48529. You also send to our address in Texas, which takes a little bit longer for our general secretary to get the checks.</p>
-
-        <p>The drive campaign for this academic year goes from this month till January 2025.</p>
+        <p><?= nl2br(h($edu_intro['content'])) ?></p>
 
         <div class="edu-qr-block">
             <img src="https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/09/QR-150x150.jpg"

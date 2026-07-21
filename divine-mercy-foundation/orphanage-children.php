@@ -2,6 +2,7 @@
 $page_title = 'Children at the Orphanage';
 $meta_desc  = 'Meet the vulnerable children at the Divine Mercy Foundation Orphanage in Cameroon — their stories, needs, and hopes.';
 require_once 'includes/header.php';
+$orphanage_children = get_page_content('orphanage_children_intro');
 ?>
 
 <section class="page-hero">
@@ -18,8 +19,7 @@ require_once 'includes/header.php';
         <div class="section-split-text">
             <span class="section-eyebrow">Who We Serve</span>
             <h2>Vulnerable Children Who Need Us Most</h2>
-            <p>The children at the Divine Mercy Foundation Orphanage come from some of the most difficult circumstances imaginable. Many are orphans who have lost one or both parents to illness, poverty, or conflict. Others come from single-parent households living in extreme poverty, where a parent simply cannot provide food, shelter or schooling.</p>
-            <p>Before coming to the orphanage, many of these children had no security, no reliable meals, and no access to education. The orphanage changes all of that — giving each child a stable home and the chance to grow into their full potential.</p>
+            <p><?= nl2br(h($orphanage_children['content'])) ?></p>
         </div>
         <div class="section-split-visual">
             <img src="https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-05.19.37-576x1024.jpeg" alt="Child at the orphanage" style="width:100%;border-radius:12px;object-fit:cover;max-height:460px;">

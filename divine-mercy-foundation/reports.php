@@ -2,6 +2,8 @@
 $page_title = 'Reports';
 $meta_desc  = 'Annual reports of Divine Mercy Foundation — financial and programme reports from 2021 to 2025.';
 require_once 'includes/header.php';
+$reports_intro          = get_page_content('reports_intro');
+$reports_accountability = get_page_content('reports_accountability');
 ?>
 
 <section class="page-hero">
@@ -16,7 +18,7 @@ require_once 'includes/header.php';
     <div class="container">
         <div class="section-header">
             <span class="section-eyebrow">Financial &amp; Programme Reports</span>
-            <p>Each year Divine Mercy Foundation publishes a report covering our programmes, expenditure and impact across Cameroon, South Africa, Kenya and Tanzania. Download the report for each year below.</p>
+            <p><?= nl2br(h($reports_intro['content'])) ?></p>
         </div>
         <div class="reports-grid">
 
@@ -83,7 +85,7 @@ require_once 'includes/header.php';
     <div class="container" style="max-width:700px;text-align:center;">
         <span class="section-eyebrow">Transparency</span>
         <h2>Our Commitment to Accountability</h2>
-        <p>Divine Mercy Foundation is a 501(c)(3) tax-exempt organisation. We file annual Form 990 returns with the IRS and maintain full financial records open to review. If you have questions about our finances or programmes, please contact us directly.</p>
+        <p><?= nl2br(h($reports_accountability['content'])) ?></p>
         <div style="margin-top:2rem;">
             <a href="/contact.php" class="btn btn-primary">Contact Us</a>
             <a href="/about-irs.php" class="btn btn-outline" style="margin-left:1rem;">IRS Tax Exempt Status</a>

@@ -2,6 +2,8 @@
 $page_title = 'About the Orphanage';
 $meta_desc  = 'Learn about the Divine Mercy Foundation Orphanage in Cameroon — its history, mission, and the children it serves.';
 require_once 'includes/header.php';
+$orphanage_story    = get_page_content('orphanage_story');
+$orphanage_location = get_page_content('orphanage_location');
 ?>
 
 <section class="page-hero">
@@ -18,9 +20,7 @@ require_once 'includes/header.php';
         <div class="section-split-text">
             <span class="section-eyebrow">Our Story</span>
             <h2>From a Dream to a Real Home</h2>
-            <p>The Divine Mercy Foundation Orphanage was born out of a deep desire to respond to one of the most urgent humanitarian needs in Cameroon — children left without parents, without shelter, without food, and without hope.</p>
-            <p>Founded by Rev. Fr. Georges Roger Bidzogo SAC, the orphanage began as a temporary refuge. Over time, with the generosity of donors from around the world, it has grown into a permanent structure being built to house, feed, educate, and care for vulnerable children long-term.</p>
-            <p>Located in Cameroon, the orphanage is a place where children experience love, structure, and opportunity — many for the first time in their lives.</p>
+            <p><?= nl2br(h($orphanage_story['content'])) ?></p>
         </div>
         <div class="section-split-visual">
             <img src="https://divinemercyfoundationfrbz.org/wp-content/uploads/2026/02/dmf-2-1024x576.jpeg" alt="Orphanage building" style="width:100%;border-radius:12px;object-fit:cover;max-height:400px;">
@@ -79,8 +79,7 @@ require_once 'includes/header.php';
         <div class="section-split-text">
             <span class="section-eyebrow">Where We Are</span>
             <h2>Located in Cameroon, Reaching Many</h2>
-            <p>The orphanage is based in Cameroon, where political instability and extreme poverty have left many children orphaned or abandoned. The region has one of the highest rates of child vulnerability on the continent.</p>
-            <p>Divine Mercy Foundation chose this location intentionally — to be where the need is greatest. With a permanent structure now rising from the ground, the orphanage is becoming a beacon of stability for the surrounding community.</p>
+            <p><?= nl2br(h($orphanage_location['content'])) ?></p>
             <div style="margin-top:1.5rem;">
                 <a href="/orphanage-children.php" class="btn btn-primary">Meet the Children</a>
             </div>

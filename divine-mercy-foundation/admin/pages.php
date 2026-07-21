@@ -6,12 +6,28 @@ $admin_title = 'Page Content';
 $pdo = get_db();
 
 $page_keys = [
-    'about_mission'       => 'About — Mission Statement',
-    'about_story'         => 'About — Our Story',
-    'about_vision'        => 'About — Our Vision',
-    'education_intro'     => 'Programs — Child Education',
-    'child_protection_text' => 'Programs — Child Protection',
-    'health_nutrition_text' => 'Programs — Health & Nutrition',
+    // About
+    'about_mission'            => 'About — Mission Statement',
+    'about_story'              => 'About — Our Story',
+    'about_vision'             => 'About — Our Vision',
+    // Programs
+    'education_intro'          => 'Programs — Child Education',
+    'child_protection_text'    => 'Programs — Child Protection',
+    'health_nutrition_text'    => 'Programs — Health & Nutrition',
+    // Orphanage
+    'orphanage_progress_update'=> 'Orphanage — Progress Update',
+    'orphanage_about_project'  => 'Orphanage — About the Project',
+    'orphanage_story'          => 'Orphanage About — Our Story',
+    'orphanage_location'       => 'Orphanage About — Location',
+    'orphanage_children_intro' => 'Children — Who We Serve',
+    'orphanage_volunteer_text' => 'Support — Volunteer & Partner',
+    // Mission
+    'mission_main_text'        => 'Mission — Body Text',
+    // Education & Reports
+    'education_fund_intro'     => 'Education Fund — Introduction',
+    'school_tuition_intro'     => 'School Tuition — Introduction',
+    'reports_intro'            => 'Reports — Introduction',
+    'reports_accountability'   => 'Reports — Accountability',
 ];
 
 $success = false;
@@ -27,8 +43,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             $title   = trim($_POST['title'] ?? '');
             $content = trim($_POST['content'] ?? '');
-            $stmt = $pdo->prepare("INSERT INTO page_content (page_key, title, content) VALUES (?,?,?)
-                ON DUPLICATE KEY UPDATE title=VALUES(title), content=VALUES(content)");
+            if (DB_DRIVER === 'sqlite') {
+                $stmt = $pdo->prepare("INSERT OR REPLACE INTO page_content (page_key, title, content) VALUES (?,?,?)");
+            } else {
+                $stmt = $pdo->prepare("INSERT INTO page_content (page_key, title, content) VALUES (?,?,?)
+                    ON DUPLICATE KEY UPDATE title=VALUES(title), content=VALUES(content)");
+            }
             $stmt->execute([$key, $title, $content]);
             set_flash('success','Content updated: ' . $page_keys[$key]);
             redirect('/admin/pages.php');
