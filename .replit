@@ -16,22 +16,6 @@ name = "Project"
 mode = "parallel"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Divine Mercy Foundation Preview"
-
-[[workflows.workflow]]
-name = "Divine Mercy Foundation Preview"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd divine-mercy-foundation && PREVIEW_MODE=1 php -S 0.0.0.0:5000"
-waitForPort = 5000
-
-[workflows.workflow.metadata]
-outputType = "webview"
-
 [agent]
 stack = "PNPM_WORKSPACE"
 expertMode = true
