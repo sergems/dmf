@@ -38,14 +38,5 @@ require_once 'includes/header.php';
     </div>
 </section>
 
-<section class="impact-banner">
-    <div class="container impact-inner">
-        <div class="impact-text">
-            <h2>Help Build This Orphanage</h2>
-            <p>Every contribution brings us closer to completing this home for children in need.</p>
-        </div>
-        <a href="/orphanage-support.php" class="btn btn-white">Support the Orphanage</a>
-    </div>
-</section>
 
 <?php require_once 'includes/footer.php'; ?>

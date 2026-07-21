@@ -132,32 +132,5 @@ $images_sep7 = [
     </div>
 </section>
 
-<!-- Nov 2025 follow-up -->
-<section class="section section-light">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow">November 2025</span>
-            <h2>Continued Support</h2>
-            <p>Our commitment to the children of Orphanage Elizabeth Sana continues in 2025 and beyond.</p>
-        </div>
-        <div class="gallery-grid">
-            <a href="https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-05.19.37-849x1024.jpeg" class="gallery-item" target="_blank" rel="noopener">
-                <img src="https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-05.19.37-849x1024.jpeg"
-                     alt="Orphanage Elizabeth Sana — November 2025" loading="lazy">
-                <div class="gallery-overlay"><span>View</span></div>
-            </a>
-        </div>
-    </div>
-</section>
-
-<section class="impact-banner">
-    <div class="container impact-inner">
-        <div class="impact-text">
-            <h2>Help a Child Go to School</h2>
-            <p>Your donation funds tuition, school supplies, and the basic necessities every child deserves.</p>
-        </div>
-        <a href="/donate.php" class="btn btn-white">Donate Now</a>
-    </div>
-</section>
 
 <?php require_once 'includes/footer.php'; ?>

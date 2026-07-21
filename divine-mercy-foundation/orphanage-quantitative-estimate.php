@@ -54,14 +54,5 @@ require_once 'includes/header.php';
     </div>
 </section>
 
-<section class="impact-banner">
-    <div class="container impact-inner">
-        <div class="impact-text">
-            <h2>Help Fund the Construction</h2>
-            <p>Your donation directly contributes to building a permanent, safe home for orphaned children.</p>
-        </div>
-        <a href="/donate.php" class="btn btn-white">Donate Now</a>
-    </div>
-</section>
 
 <?php require_once 'includes/footer.php'; ?>
