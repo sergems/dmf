@@ -75,7 +75,7 @@ function is_active(string $page): string {
                 </li>
                 <li><a href="/programs.php" class="<?= is_active('programs') ?>">Programs</a></li>
                 <?php
-                $orphanage_pages = ['orphanage','orphanage-about','orphanage-children','orphanage-support','orphanage-gallery','orphanage-distribution-plan','orphanage-quantitative-estimate','orphanage-soup-kitchen','orphanage-distribution-tuition'];
+                $orphanage_pages = ['orphanage','orphanage-about','orphanage-children','orphanage-support','orphanage-gallery','orphanage-distribution-plan','orphanage-quantitative-estimate','orphanage-distribution-tuition'];
                 $orphanage_active = in_array($current_page, $orphanage_pages) ? 'active' : '';
                 ?>
                 <li class="has-dropdown <?= $orphanage_active ? 'active' : '' ?>">
@@ -84,7 +84,6 @@ function is_active(string $page): string {
                         <li><a href="/orphanage.php" class="<?= is_active('orphanage') ?>">Orphanage</a></li>
                         <li><a href="/orphanage-distribution-plan.php" class="<?= is_active('orphanage-distribution-plan') ?>">Distribution Plan</a></li>
                         <li><a href="/orphanage-quantitative-estimate.php" class="<?= is_active('orphanage-quantitative-estimate') ?>">Quantitative Estimate</a></li>
-                        <li><a href="/orphanage-soup-kitchen.php" class="<?= is_active('orphanage-soup-kitchen') ?>">Feeding – Soup Kitchen</a></li>
                         <li><a href="/orphanage-distribution-tuition.php" class="<?= is_active('orphanage-distribution-tuition') ?>">Distribution of Tuition &amp; School Mattresses</a></li>
                     </ul>
                 </li>
