@@ -28,8 +28,8 @@ require_once 'includes/header.php';
         </div>
         <div class="section-split-visual">
             <div class="programs-img-wrap">
-                <img src="https://divinemercyfoundationfrbz.org/wp-content/uploads/2026/02/dmf-1-1024x576.jpeg"
-                     alt="Orphanage Elizabeth Sana — 2026"
+                <img src="/assets/images/orphanage-july2026/img-01.jpeg"
+                     alt="Orphanage Elizabeth Sana — July 2026"
                      style="width:100%;border-radius:12px;object-fit:cover;max-height:380px;">
             </div>
         </div>
@@ -76,8 +76,69 @@ require_once 'includes/header.php';
     </div>
 </section>
 
-<!-- Latest photos 2026 -->
+<!-- July 2026 — new photos -->
 <section class="section section-light">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">July 2026 — Latest Update</span>
+            <h2>Life Inside the Orphanage</h2>
+            <p>The orphanage is alive with joy. Children are learning, eating, playing, and growing — here is a glimpse of daily life at Orphanage Elizabeth Sana in July 2026.</p>
+        </div>
+
+        <!-- Building -->
+        <div style="margin-bottom:2.5rem;">
+            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:1rem; text-transform:uppercase; letter-spacing:.06em;">The Building</h3>
+            <div class="gallery-grid">
+                <a href="/assets/images/orphanage-july2026/img-01.jpeg" class="gallery-item" target="_blank" rel="noopener">
+                    <img src="/assets/images/orphanage-july2026/img-01.jpeg" alt="Orphanage Elizabeth Sana exterior — July 2026" loading="lazy">
+                    <div class="gallery-overlay"><span>View</span></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Classroom & Learning -->
+        <div style="margin-bottom:2.5rem;">
+            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:1rem; text-transform:uppercase; letter-spacing:.06em;">Classroom &amp; Learning</h3>
+            <div class="gallery-grid">
+                <?php foreach (['img-05','img-09','img-10','img-11'] as $n): ?>
+                <a href="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" class="gallery-item" target="_blank" rel="noopener">
+                    <img src="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" alt="Children in the classroom — Orphanage July 2026" loading="lazy">
+                    <div class="gallery-overlay"><span>View</span></div>
+                </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <!-- Daily Life & Celebrations -->
+        <div style="margin-bottom:2.5rem;">
+            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:1rem; text-transform:uppercase; letter-spacing:.06em;">Daily Life &amp; Celebrations</h3>
+            <div class="gallery-grid">
+                <?php foreach (['img-06','img-07','img-12','img-13','img-14','img-15','img-16'] as $n): ?>
+                <a href="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" class="gallery-item" target="_blank" rel="noopener">
+                    <img src="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" alt="Children at the orphanage — July 2026" loading="lazy">
+                    <div class="gallery-overlay"><span>View</span></div>
+                </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <!-- Meals -->
+        <div>
+            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:1rem; text-transform:uppercase; letter-spacing:.06em;">Meals &amp; Nutrition</h3>
+            <div class="gallery-grid">
+                <?php foreach (['img-08'] as $n): ?>
+                <a href="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" class="gallery-item" target="_blank" rel="noopener">
+                    <img src="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" alt="Children eating together — Orphanage July 2026" loading="lazy">
+                    <div class="gallery-overlay"><span>View</span></div>
+                </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- February 2026 photos -->
+<section class="section section-white">
     <div class="container">
         <div class="section-header">
             <span class="section-eyebrow">February 2026</span>

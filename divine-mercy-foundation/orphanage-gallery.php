@@ -12,8 +12,43 @@ require_once 'includes/header.php';
     </div>
 </section>
 
-<!-- 2026 photos -->
+<!-- July 2026 — new photos -->
 <section class="section section-white">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">July 2026 — New</span>
+            <h2>Life Inside the Orphanage</h2>
+            <p>Children learning in their new classrooms, sharing meals in the dining hall, and celebrating together — a window into daily life at Orphanage Elizabeth Sana.</p>
+        </div>
+        <div class="gallery-grid">
+            <?php
+            $jul26_photos = [
+                ['img-01', 'The orphanage building — Orphanage Elizabeth Sana, Yaoundé'],
+                ['img-05', 'Children in their classroom in red foundation uniforms'],
+                ['img-06', 'Children relaxing between activities'],
+                ['img-07', 'Girls dressed in white for a special celebration'],
+                ['img-08', 'Children sharing a meal in the dining hall'],
+                ['img-09', 'Children at the orphanage — July 2026'],
+                ['img-10', 'Children at the orphanage — July 2026'],
+                ['img-11', 'Children at the orphanage — July 2026'],
+                ['img-12', 'Children at the orphanage — July 2026'],
+                ['img-13', 'Children at the orphanage — July 2026'],
+                ['img-14', 'Children at the orphanage — July 2026'],
+                ['img-15', 'Children at the orphanage — July 2026'],
+                ['img-16', 'Children at the orphanage — July 2026'],
+            ];
+            foreach ($jul26_photos as [$n, $alt]): ?>
+            <a href="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" class="gallery-item" target="_blank" rel="noopener">
+                <img src="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" alt="<?= h($alt) ?>" loading="lazy">
+                <div class="gallery-overlay"><span>View</span></div>
+            </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- Feb 2026 photos -->
+<section class="section section-light">
     <div class="container">
         <div class="section-header">
             <span class="section-eyebrow">2026</span>
