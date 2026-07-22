@@ -73,15 +73,24 @@ $yt  = get_setting('youtube_url', '');
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                         <a href="mailto:<?= h($site_email) ?>"><?= h($site_email) ?></a>
                     </li>
-                    <?php if ($site_phone): ?>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.49 12 19.79 19.79 0 011.42 3.39a2 2 0 012-2.18H6.4a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.53 9.09a16 16 0 006.29 6.29l1.07-1.07a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                        <a href="tel:<?= h($site_phone) ?>"><?= h($site_phone) ?></a>
+                    <li style="align-items:flex-start;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:3px;flex-shrink:0;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.49 12 19.79 19.79 0 011.42 3.39a2 2 0 012-2.18H6.4a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.53 9.09a16 16 0 006.29 6.29l1.07-1.07a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <span>
+                            <a href="tel:+237656165627">+237 656 165 627</a><br>
+                            <a href="tel:+237678670126">+237 678 670 126</a><br>
+                            <a href="tel:+237695065969">+237 695 065 969</a>
+                        </span>
                     </li>
-                    <?php endif; ?>
+                    <li style="align-items:flex-start;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:3px;flex-shrink:0;"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                        <span>
+                            <span style="color:#ff6600;font-weight:600;">OM:</span> <a href="tel:+237658783814">658 783 814</a><br>
+                            <span style="color:#ffcc00;font-weight:600;text-shadow:0 0 0 #000;">MTN:</span> <a href="tel:+237679141601">679 141 601</a>
+                        </span>
+                    </li>
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Texas, USA
+                        Assok | Nkoabang, Yaoundé
                     </li>
                 </ul>
             </div>
