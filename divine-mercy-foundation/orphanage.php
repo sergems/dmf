@@ -31,12 +31,14 @@ $orphanage_about    = get_page_content('orphanage_about_project');
             </div>
         </div>
         <div class="section-split-visual">
-            <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(13,31,53,.1);height:360px;">
+            <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(13,31,53,.1);height:360px;position:relative;">
                 <iframe
-                    src="https://maps.google.com/maps?q=Orph%C3%A9linat+%C3%89lizabetta+Sanna+de+Divine+Mercy+Foundation,+Assok,+Yaound%C3%A9,+Cameroon&output=embed"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=11.4450%2C3.8050%2C11.4750%2C3.8250&amp;layer=mapnik&amp;marker=3.8150%2C11.4600"
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
                     title="Orphanage Elizabeth Sana — Assok, Yaoundé"></iframe>
+                <div style="position:absolute;bottom:8px;right:8px;background:rgba(255,255,255,.9);border-radius:6px;padding:4px 8px;font-size:.75rem;">
+                    <a href="https://www.openstreetmap.org/?mlat=3.8150&mlon=11.4600#map=15/3.8150/11.4600" target="_blank" rel="noopener" style="color:#c0392b;text-decoration:none;">View larger map ↗</a>
+                </div>
             </div>
         </div>
     </div>
