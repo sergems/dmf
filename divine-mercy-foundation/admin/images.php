@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['slider_image'])) {
             if (move_uploaded_file($uploads['tmp_name'][$i], $upload_dir . $fname)) {
                 $list[] = 'uploads/slider/' . $fname;
             } else {
-                $errors[] = "Could not save "$orig_name".";
+                $errors[] = "Could not save \"$orig_name\".";
             }
         }
         save_slider_images($pdo, $list);
