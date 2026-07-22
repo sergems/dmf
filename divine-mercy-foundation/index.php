@@ -6,8 +6,19 @@ require_once 'includes/header.php';
 $hero_title     = get_setting('hero_title', 'Bringing Hope. Sharing Love. Changing Lives.');
 $hero_sub       = get_setting('hero_subtitle', 'Divine Mercy Foundation spreads joy, care, and opportunity to children and families across Cameroon, South Africa, Kenya, and Tanzania.');
 $donate_url     = get_setting('donate_url', '#');
-$slider_raw     = get_setting('slider_images', '');
-$slider_images  = ($slider_raw && ($arr = json_decode($slider_raw, true)) && is_array($arr)) ? $arr : [];
+$slider_raw    = get_setting('slider_images', '');
+$slider_slides = [];
+if ($slider_raw) {
+    $arr = json_decode($slider_raw, true);
+    if (is_array($arr)) {
+        foreach ($arr as $s) {
+            // backward compat: plain strings → objects
+            $slider_slides[] = is_string($s)
+                ? ['image'=>$s,'title'=>'','subtitle'=>'']
+                : $s;
+        }
+    }
+}
 $latest_news  = get_news_list(3);
 
 $stats = [
@@ -21,24 +32,27 @@ $stats = [
 <!-- HERO SLIDER -->
 <section class="hero" id="hero-slider">
 
-    <?php if (!empty($slider_images)): ?>
-    <!-- Slider background panels -->
+    <?php if (!empty($slider_slides)): ?>
     <div class="slider-track" aria-hidden="true">
-        <?php foreach ($slider_images as $i => $img): ?>
-        <div class="slide-panel<?= $i === 0 ? ' active' : '' ?>" style="background-image:url('/<?= h($img) ?>')"></div>
+        <?php foreach ($slider_slides as $i => $slide): ?>
+        <div class="slide-panel<?= $i === 0 ? ' active' : '' ?>"
+             style="background-image:url('/<?= h($slide['image']) ?>')"
+             data-title="<?= h($slide['title']) ?>"
+             data-subtitle="<?= h($slide['subtitle']) ?>"></div>
         <?php endforeach; ?>
     </div>
     <?php endif; ?>
 
     <div class="hero-overlay"></div>
-    <?php if (empty($slider_images)): ?>
+    <?php if (empty($slider_slides)): ?>
     <div class="hero-bg-pattern"></div>
     <?php endif; ?>
 
     <div class="container hero-content">
         <div class="hero-badge">Faith · Hope · Mercy</div>
-        <h1 class="hero-title"><?= h($hero_title) ?></h1>
-        <p class="hero-subtitle"><?= h($hero_sub) ?></p>
+        <?php $first = $slider_slides[0] ?? []; ?>
+        <h1 class="hero-title slide-title"><?= h(!empty($first['title']) ? $first['title'] : $hero_title) ?></h1>
+        <p class="hero-subtitle slide-subtitle"><?= h(!empty($first['subtitle']) ? $first['subtitle'] : $hero_sub) ?></p>
         <div class="hero-actions">
             <a href="<?= h($donate_url) ?>" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
@@ -48,35 +62,47 @@ $stats = [
         </div>
     </div>
 
-    <?php if (!empty($slider_images)): ?>
-    <!-- Navigation arrows -->
+    <?php if (!empty($slider_slides)): ?>
     <button class="slider-arrow slider-arrow--prev" id="slider-prev" aria-label="Previous slide">
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
     <button class="slider-arrow slider-arrow--next" id="slider-next" aria-label="Next slide">
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
-
-    <!-- Dot indicators -->
     <div class="slider-dots" id="slider-dots">
-        <?php foreach ($slider_images as $i => $img): ?>
-        <button class="slider-dot<?= $i === 0 ? ' active' : '' ?>" data-slide="<?= $i ?>" aria-label="Go to slide <?= $i + 1 ?>"></button>
+        <?php foreach ($slider_slides as $i => $slide): ?>
+        <button class="slider-dot<?= $i === 0 ? ' active' : '' ?>" data-slide="<?= $i ?>" aria-label="Slide <?= $i+1 ?>"></button>
         <?php endforeach; ?>
     </div>
     <?php endif; ?>
 
-    <div class="hero-scroll-indicator">
-        <span></span>
-    </div>
+    <div class="hero-scroll-indicator"><span></span></div>
 </section>
 
-<?php if (!empty($slider_images)): ?>
+<?php if (!empty($slider_slides)): ?>
 <script>
-(function() {
-    const panels = document.querySelectorAll('.slide-panel');
-    const dots   = document.querySelectorAll('.slider-dot');
-    const total  = panels.length;
+(function(){
+    const panels   = document.querySelectorAll('.slide-panel');
+    const dots     = document.querySelectorAll('.slider-dot');
+    const titleEl  = document.querySelector('.slide-title');
+    const subEl    = document.querySelector('.slide-subtitle');
+    const defTitle = <?= json_encode($hero_title) ?>;
+    const defSub   = <?= json_encode($hero_sub) ?>;
+    const total    = panels.length;
     let cur = 0, timer;
+
+    function updateText(panel) {
+        const t = panel.dataset.title    || defTitle;
+        const s = panel.dataset.subtitle || defSub;
+        titleEl.style.opacity = '0';
+        subEl.style.opacity   = '0';
+        setTimeout(() => {
+            titleEl.textContent   = t;
+            subEl.textContent     = s;
+            titleEl.style.opacity = '1';
+            subEl.style.opacity   = '1';
+        }, 300);
+    }
 
     function goTo(n) {
         panels[cur].classList.remove('active');
@@ -84,26 +110,26 @@ $stats = [
         cur = (n + total) % total;
         panels[cur].classList.add('active');
         dots[cur] && dots[cur].classList.add('active');
+        updateText(panels[cur]);
     }
 
     function next() { goTo(cur + 1); }
     function prev() { goTo(cur - 1); }
+    function startTimer() { clearInterval(timer); timer = setInterval(next, 5500); }
 
-    function startTimer() {
-        clearInterval(timer);
-        timer = setInterval(next, 5500);
-    }
+    // Add CSS transition for text fade
+    [titleEl, subEl].forEach(el => {
+        el.style.transition = 'opacity 0.3s ease';
+    });
 
     document.getElementById('slider-next').addEventListener('click', () => { next(); startTimer(); });
     document.getElementById('slider-prev').addEventListener('click', () => { prev(); startTimer(); });
     dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.slide); startTimer(); }));
 
-    // Pause on hover
     const hero = document.getElementById('hero-slider');
     hero.addEventListener('mouseenter', () => clearInterval(timer));
     hero.addEventListener('mouseleave', startTimer);
 
-    // Touch swipe
     let tx = 0;
     hero.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
     hero.addEventListener('touchend',   e => {
