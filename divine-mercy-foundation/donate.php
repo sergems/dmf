@@ -31,18 +31,14 @@ $donate_url = get_setting('donate_url', '#');
             <h3 style="font-size:1.1rem;margin-bottom:1.25rem;text-align:center;">Mobile Donations (Cameroon)</h3>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
                 <div style="background:#fff;border-radius:10px;padding:1.25rem;display:flex;align-items:center;gap:1rem;box-shadow:0 2px 8px rgba(0,0,0,.07);">
-                    <div style="background:#ff6600;border-radius:8px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
-                    </div>
+                    <img src="/assets/images/orange-money.svg" alt="Orange Money" style="width:72px;height:36px;object-fit:contain;flex-shrink:0;">
                     <div>
                         <div style="font-size:.75rem;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:.05em;">Orange Money</div>
                         <div style="font-size:1.35rem;font-weight:700;color:#ff6600;letter-spacing:.03em;">658 783 814</div>
                     </div>
                 </div>
                 <div style="background:#fff;border-radius:10px;padding:1.25rem;display:flex;align-items:center;gap:1rem;box-shadow:0 2px 8px rgba(0,0,0,.07);">
-                    <div style="background:#ffcc00;border-radius:8px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="#333"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
-                    </div>
+                    <img src="/assets/images/mtn-momo.svg" alt="MTN Mobile Money" style="width:72px;height:36px;object-fit:contain;flex-shrink:0;">
                     <div>
                         <div style="font-size:.75rem;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:.05em;">MTN Mobile Money</div>
                         <div style="font-size:1.35rem;font-weight:700;color:#333;letter-spacing:.03em;">679 141 601</div>

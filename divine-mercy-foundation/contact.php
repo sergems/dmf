@@ -7,31 +7,6 @@ session_start();
 $page_title = 'Contact Us';
 $meta_desc  = 'Get in touch with Divine Mercy Foundation. We would love to hear from you.';
 require_once 'includes/header.php';
-
-$success = false;
-$errors  = [];
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (!verify_csrf()) {
-        $errors[] = 'Invalid form submission. Please try again.';
-    } else {
-        $name    = trim($_POST['name'] ?? '');
-        $email   = trim($_POST['email'] ?? '');
-        $subject = trim($_POST['subject'] ?? '');
-        $message = trim($_POST['message'] ?? '');
-
-        if (!$name)                       $errors[] = 'Please enter your name.';
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Please enter a valid email address.';
-        if (!$message)                    $errors[] = 'Please enter your message.';
-
-        if (!$errors) {
-            $pdo = get_db();
-            $stmt = $pdo->prepare("INSERT INTO contact_messages (name, email, subject, message) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$name, $email, $subject, $message]);
-            $success = true;
-        }
-    }
-}
 ?>
 
 <section class="page-hero">
@@ -43,92 +18,85 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </section>
 
 <section class="section section-white">
-    <div class="container contact-layout">
-
-        <!-- Info column -->
-        <div class="contact-info">
-            <h2>Get In Touch</h2>
-            <p>Have a question, want to volunteer, or interested in partnering with us? Reach out — we read every message.</p>
-
-            <div class="contact-cards">
-                <div class="contact-card">
-                    <div class="contact-card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    </div>
-                    <div>
-                        <strong>Email</strong>
-                        <a href="mailto:<?= h(get_setting('site_email')) ?>"><?= h(get_setting('site_email')) ?></a>
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <div>
-                        <strong>Cameroon Office</strong>
-                        <span>P.O. Box 14040, Assok | Nkoabang, Yaoundé, Cameroon</span>
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <div>
-                        <strong>Response Time</strong>
-                        <span>Within 2–3 business days</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-regions">
-                <h3>Active Regions</h3>
-                <div class="region-list">
-                    <span class="region-tag"><img src="https://flagcdn.com/w40/cm.png" alt="Cameroon flag" class="region-flag"> Yaoundé, Cameroon</span>
-                    <span class="region-tag"><img src="https://flagcdn.com/w40/za.png" alt="South Africa flag" class="region-flag"> Durban, South Africa</span>
-                    <span class="region-tag"><img src="https://flagcdn.com/w40/ke.png" alt="Kenya flag" class="region-flag"> Kenya</span>
-                    <span class="region-tag"><img src="https://flagcdn.com/w40/tz.png" alt="Tanzania flag" class="region-flag"> Tanzania</span>
-                </div>
-            </div>
+    <div class="container" style="max-width:860px;">
+        <div class="section-header">
+            <span class="section-eyebrow">Get In Touch</span>
+            <h2>Reach Out to Us</h2>
+            <p>Have a question, want to volunteer, or interested in partnering with us? Here's how to find us.</p>
         </div>
 
-        <!-- Form -->
-        <div class="contact-form-wrap">
-            <?php if ($success): ?>
-            <div class="form-success">
-                <div class="form-success-icon">✓</div>
-                <h3>Message Sent!</h3>
-                <p>Thank you for reaching out. We'll get back to you within 2–3 business days.</p>
-                <a href="/contact.php" class="btn btn-primary" style="margin-top:1.5rem;">Send Another</a>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2rem;">
+
+            <!-- Email -->
+            <div class="contact-card" style="flex-direction:column;align-items:flex-start;gap:.75rem;">
+                <div class="contact-card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                    <strong>Email</strong>
+                    <a href="mailto:<?= h(get_setting('site_email')) ?>" style="display:block;margin-top:.25rem;"><?= h(get_setting('site_email')) ?></a>
+                </div>
             </div>
-            <?php else: ?>
-            <?php if ($errors): ?>
-            <div class="alert alert-error">
-                <?php foreach ($errors as $e): ?><p><?= h($e) ?></p><?php endforeach; ?>
+
+            <!-- Phone -->
+            <div class="contact-card" style="flex-direction:column;align-items:flex-start;gap:.75rem;">
+                <div class="contact-card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.49 12 19.79 19.79 0 011.42 3.39a2 2 0 012-2.18H6.4a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.53 9.09a16 16 0 006.29 6.29l1.07-1.07a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div>
+                    <strong>Phone</strong>
+                    <a href="tel:+237656165627" style="display:block;margin-top:.25rem;">+237 656 165 627</a>
+                    <a href="tel:+237678670126" style="display:block;">+237 678 670 126</a>
+                    <a href="tel:+237695065969" style="display:block;">+237 695 065 969</a>
+                </div>
             </div>
-            <?php endif; ?>
-            <form method="post" action="/contact.php" class="contact-form">
-                <?= csrf_field() ?>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Full Name <span class="required">*</span></label>
-                        <input type="text" id="name" name="name" value="<?= h($_POST['name'] ?? '') ?>" required placeholder="Your full name">
+
+            <!-- Address -->
+            <div class="contact-card" style="flex-direction:column;align-items:flex-start;gap:.75rem;">
+                <div class="contact-card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                    <strong>Address</strong>
+                    <span style="display:block;margin-top:.25rem;">P.O. Box 14040</span>
+                    <span style="display:block;">Assok | Nkoabang, Yaoundé</span>
+                    <span style="display:block;">Cameroon</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mobile Money -->
+        <div style="margin-top:2.5rem;">
+            <h3 style="font-size:1.1rem;margin-bottom:1.25rem;text-align:center;">Mobile Donations (Cameroon)</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+                <div style="background:#fff;border:1px solid #eee;border-radius:12px;padding:1.25rem;display:flex;align-items:center;gap:1rem;box-shadow:0 2px 8px rgba(0,0,0,.06);">
+                    <img src="/assets/images/orange-money.svg" alt="Orange Money" style="width:80px;height:40px;object-fit:contain;flex-shrink:0;">
+                    <div>
+                        <div style="font-size:.75rem;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:.05em;">Orange Money</div>
+                        <div style="font-size:1.3rem;font-weight:700;color:#ff6600;">658 783 814</div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email Address <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" value="<?= h($_POST['email'] ?? '') ?>" required placeholder="your@email.com">
+                </div>
+                <div style="background:#fff;border:1px solid #eee;border-radius:12px;padding:1.25rem;display:flex;align-items:center;gap:1rem;box-shadow:0 2px 8px rgba(0,0,0,.06);">
+                    <img src="/assets/images/mtn-momo.svg" alt="MTN Mobile Money" style="width:80px;height:40px;object-fit:contain;flex-shrink:0;">
+                    <div>
+                        <div style="font-size:.75rem;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:.05em;">MTN Mobile Money</div>
+                        <div style="font-size:1.3rem;font-weight:700;color:#1a1a1a;">679 141 601</div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" value="<?= h($_POST['subject'] ?? '') ?>" placeholder="How can we help?">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message <span class="required">*</span></label>
-                    <textarea id="message" name="message" rows="6" required placeholder="Your message..."><?= h($_POST['message'] ?? '') ?></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-full">Send Message</button>
-            </form>
-            <?php endif; ?>
+            </div>
+            <p style="font-size:.82rem;color:#888;margin-top:1rem;text-align:center;">Send via Orange Money or MTN MoMo — please include your name as reference.</p>
+        </div>
+
+        <!-- Active Regions -->
+        <div class="contact-regions" style="margin-top:2.5rem;">
+            <h3>Active Regions</h3>
+            <div class="region-list">
+                <span class="region-tag"><img src="https://flagcdn.com/w40/cm.png" alt="Cameroon flag" class="region-flag"> Yaoundé, Cameroon</span>
+                <span class="region-tag"><img src="https://flagcdn.com/w40/za.png" alt="South Africa flag" class="region-flag"> Durban, South Africa</span>
+                <span class="region-tag"><img src="https://flagcdn.com/w40/ke.png" alt="Kenya flag" class="region-flag"> Kenya</span>
+                <span class="region-tag"><img src="https://flagcdn.com/w40/tz.png" alt="Tanzania flag" class="region-flag"> Tanzania</span>
+            </div>
         </div>
 
     </div>
