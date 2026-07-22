@@ -1,9 +1,11 @@
 <?php
 $page_title = 'Reports';
-$meta_desc  = 'Annual reports of Divine Mercy Foundation — financial and programme reports from 2021 to 2025.';
+$meta_desc  = 'Annual reports of Divine Mercy Foundation — financial and programme reports.';
 require_once 'includes/header.php';
 $reports_intro          = get_page_content('reports_intro');
 $reports_accountability = get_page_content('reports_accountability');
+
+$reports = get_db()->query("SELECT * FROM reports ORDER BY year DESC")->fetchAll();
 ?>
 
 <section class="page-hero">
@@ -20,64 +22,32 @@ $reports_accountability = get_page_content('reports_accountability');
             <span class="section-eyebrow">Financial &amp; Programme Reports</span>
             <p><?= nl2br(h($reports_intro['content'])) ?></p>
         </div>
+
+        <?php if (empty($reports)): ?>
+        <p style="text-align:center;color:var(--text-muted);padding:2rem 0;">Reports will be published here once available.</p>
+        <?php else: ?>
         <div class="reports-grid">
-
+            <?php foreach ($reports as $r): ?>
             <div class="report-card">
-                <div class="report-year">2025</div>
+                <div class="report-year"><?= h($r['year']) ?></div>
                 <div class="report-info">
-                    <h3>Annual Report 2025</h3>
-                    <p>Programme outcomes, financial summary and community impact for the 2025 fiscal year.</p>
+                    <h3><?= h($r['title']) ?></h3>
+                    <?php if ($r['description']): ?>
+                    <p><?= h($r['description']) ?></p>
+                    <?php endif; ?>
                 </div>
                 <div class="report-actions">
-                    <a href="/assets/documents/report-2025.pdf" target="_blank" class="btn btn-primary report-dl-btn">⬇ Download</a>
-                </div>
-            </div>
-
-            <div class="report-card">
-                <div class="report-year">2024</div>
-                <div class="report-info">
-                    <h3>Annual Report 2024</h3>
-                    <p>Programme outcomes, financial summary and community impact for the 2024 fiscal year.</p>
-                </div>
-                <div class="report-actions">
-                    <a href="/assets/documents/report-2024.pdf" target="_blank" class="btn btn-primary report-dl-btn">⬇ Download</a>
-                </div>
-            </div>
-
-            <div class="report-card">
-                <div class="report-year">2023</div>
-                <div class="report-info">
-                    <h3>Annual Report 2023</h3>
-                    <p>Programme outcomes, financial summary and community impact for the 2023 fiscal year.</p>
-                </div>
-                <div class="report-actions">
+                    <?php if ($r['filename']): ?>
+                    <a href="/uploads/reports/<?= h($r['filename']) ?>" target="_blank"
+                       class="btn btn-primary report-dl-btn">⬇ Download PDF</a>
+                    <?php else: ?>
                     <span class="report-badge upcoming">Coming Soon</span>
+                    <?php endif; ?>
                 </div>
             </div>
-
-            <div class="report-card">
-                <div class="report-year">2022</div>
-                <div class="report-info">
-                    <h3>Annual Report 2022</h3>
-                    <p>Programme outcomes, financial summary and community impact for the 2022 fiscal year.</p>
-                </div>
-                <div class="report-actions">
-                    <span class="report-badge upcoming">Coming Soon</span>
-                </div>
-            </div>
-
-            <div class="report-card">
-                <div class="report-year">2021</div>
-                <div class="report-info">
-                    <h3>Annual Report 2021</h3>
-                    <p>Programme outcomes, financial summary and community impact for the 2021 fiscal year.</p>
-                </div>
-                <div class="report-actions">
-                    <span class="report-badge upcoming">Coming Soon</span>
-                </div>
-            </div>
-
+            <?php endforeach; ?>
         </div>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -92,4 +62,5 @@ $reports_accountability = get_page_content('reports_accountability');
         </div>
     </div>
 </section>
+
 <?php require_once 'includes/footer.php'; ?>
