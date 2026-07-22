@@ -79,16 +79,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['slider_image'])) {
         foreach ($uploads['name'] as $i => $orig_name) {
             if ($uploads['error'][$i] === UPLOAD_ERR_NO_FILE) continue;
             if ($uploads['error'][$i] !== UPLOAD_ERR_OK) {
-                $errors[] = "Upload error for "$orig_name".";
+                $errors[] = "Upload error for \"$orig_name\".";
                 continue;
             }
             if ($uploads['size'][$i] > $max_bytes) {
-                $errors[] = ""$orig_name" exceeds 8 MB limit.";
+                $errors[] = "\"$orig_name\" exceeds 8 MB limit.";
                 continue;
             }
             $mime = mime_content_type($uploads['tmp_name'][$i]);
             if (!in_array($mime, $allowed, true)) {
-                $errors[] = ""$orig_name" is not an allowed image type.";
+                $errors[] = "\"$orig_name\" is not an allowed image type.";
                 continue;
             }
             $ext  = match($mime) {
