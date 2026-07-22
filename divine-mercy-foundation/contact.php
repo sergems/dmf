@@ -1,11 +1,6 @@
 <?php
-require_once 'includes/functions.php';
-require_once 'config.php';
-session_name(ADMIN_SESSION_NAME);
-session_start();
-
 $page_title = 'Contact Us';
-$meta_desc  = 'Get in touch with Divine Mercy Foundation. We would love to hear from you.';
+$meta_desc  = 'Get in touch with Divine Mercy Foundation — phone, email, mobile money, and our address in Yaoundé, Cameroon.';
 require_once 'includes/header.php';
 ?>
 
@@ -22,7 +17,7 @@ require_once 'includes/header.php';
         <div class="section-header">
             <span class="section-eyebrow">Get In Touch</span>
             <h2>Reach Out to Us</h2>
-            <p>Have a question, want to volunteer, or interested in partnering with us? Here's how to find us.</p>
+            <p>Have a question, want to volunteer, or interested in partnering? Here's how to find us.</p>
         </div>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2rem;">

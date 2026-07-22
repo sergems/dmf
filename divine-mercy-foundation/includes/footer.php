@@ -1,7 +1,6 @@
 <?php
 $site_name  = get_setting('site_name', 'Divine Mercy Foundation');
-$site_email = get_setting('site_email', 'divinemercyfoundation@gmail.com');
-$site_phone = get_setting('site_phone', '');
+$site_email = get_setting('site_email', 'divinemercyfoundation237@gmail.com');
 $donate_url = get_setting('donate_url', '#');
 $fb  = get_setting('facebook_url', '');
 $ig  = get_setting('instagram_url', '');
@@ -9,6 +8,7 @@ $tw  = get_setting('twitter_url', '');
 $yt  = get_setting('youtube_url', '');
 ?>
 <footer class="site-footer">
+
     <!-- Donate CTA band -->
     <div class="footer-cta">
         <div class="container footer-cta-inner">
@@ -23,7 +23,8 @@ $yt  = get_setting('youtube_url', '');
     <!-- Footer columns -->
     <div class="footer-main">
         <div class="container footer-grid">
-            <!-- Brand -->
+
+            <!-- Brand (hidden on mobile) -->
             <div class="footer-col footer-brand">
                 <div class="footer-logo">
                     <img src="/assets/images/logo.png" alt="<?= h($site_name) ?>">
@@ -42,7 +43,7 @@ $yt  = get_setting('youtube_url', '');
                 <?php endif; ?>
             </div>
 
-            <!-- Quick Links -->
+            <!-- Quick Links (hidden on mobile) -->
             <div class="footer-col">
                 <h3>Quick Links</h3>
                 <ul>
@@ -55,7 +56,7 @@ $yt  = get_setting('youtube_url', '');
                 </ul>
             </div>
 
-            <!-- Programs -->
+            <!-- Programs (hidden on mobile) -->
             <div class="footer-col">
                 <h3>Our Programs</h3>
                 <ul>
@@ -65,7 +66,7 @@ $yt  = get_setting('youtube_url', '');
                 </ul>
             </div>
 
-            <!-- Contact -->
+            <!-- Contact (always visible) -->
             <div class="footer-col">
                 <h3>Contact Us</h3>
                 <ul class="footer-contact-list">
@@ -95,6 +96,7 @@ $yt  = get_setting('youtube_url', '');
                     </li>
                 </ul>
             </div>
+
         </div>
     </div>
 
@@ -104,6 +106,7 @@ $yt  = get_setting('youtube_url', '');
             <a href="/admin/login.php" class="footer-admin-link">Admin</a>
         </div>
     </div>
+
 </footer>
 
 <script src="/assets/js/main.js"></script>

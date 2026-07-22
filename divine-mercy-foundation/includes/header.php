@@ -2,8 +2,18 @@
 require_once dirname(__DIR__) . '/includes/db.php';
 
 $site_name    = get_setting('site_name', 'Divine Mercy Foundation');
+$site_email   = get_setting('site_email', 'divinemercyfoundation237@gmail.com');
 $donate_url   = get_setting('donate_url', '#');
 $current_page = basename($_SERVER['PHP_SELF'], '.php');
+
+// Canonical base URL
+$canonical_base = 'https://divinemercyfoundationfrbz.com';
+$canonical_url  = $canonical_base . '/' . ($current_page === 'index' ? '' : $current_page . '.php');
+
+// OG / SEO values — pages can override $og_image before including header
+$og_title = ($page_title ?? $site_name) . ($page_title ? ' — ' . $site_name : '');
+$og_desc  = $meta_desc ?? 'Divine Mercy Foundation — Bringing Hope, Sharing Love, Changing Lives across Cameroon, South Africa, Kenya and Tanzania.';
+$og_image = $og_image ?? $canonical_base . '/assets/images/logo.png';
 
 // Determine active nav
 function is_active(string $page): string {
@@ -16,8 +26,64 @@ function is_active(string $page): string {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= h($page_title ?: $site_name) ?><?= $page_title ? ' — ' . h($site_name) : '' ?></title>
-    <meta name="description" content="<?= h($meta_desc ?? 'Divine Mercy Foundation — Bringing Hope, Sharing Love, Changing Lives across Cameroon, South Africa, Kenya and Tanzania.') ?>">
+
+    <!-- Primary meta -->
+    <title><?= h($og_title) ?></title>
+    <meta name="description" content="<?= h($og_desc) ?>">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="<?= h($canonical_url) ?>">
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website">
+    <meta property="og:site_name"   content="<?= h($site_name) ?>">
+    <meta property="og:title"       content="<?= h($og_title) ?>">
+    <meta property="og:description" content="<?= h($og_desc) ?>">
+    <meta property="og:url"         content="<?= h($canonical_url) ?>">
+    <meta property="og:image"       content="<?= h($og_image) ?>">
+    <meta property="og:locale"      content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="<?= h($og_title) ?>">
+    <meta name="twitter:description" content="<?= h($og_desc) ?>">
+    <meta name="twitter:image"       content="<?= h($og_image) ?>">
+
+    <!-- Geo -->
+    <meta name="geo.region"   content="CM">
+    <meta name="geo.placename" content="Yaoundé, Cameroon">
+
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "Divine Mercy Foundation",
+      "alternateName": "DMF",
+      "url": "<?= $canonical_base ?>",
+      "logo": "<?= $canonical_base ?>/assets/images/logo.png",
+      "image": "<?= $canonical_base ?>/assets/images/logo.png",
+      "description": "A faith-based 501(c)(3) nonprofit bringing hope, education, and opportunity to vulnerable children in Cameroon, South Africa, Kenya, and Tanzania.",
+      "email": "divinemercyfoundation237@gmail.com",
+      "telephone": ["+237656165627", "+237678670126", "+237695065969"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Assok | Nkoabang",
+        "addressLocality": "Yaoundé",
+        "postalCode": "14040",
+        "addressCountry": "CM"
+      },
+      "areaServed": ["Cameroon", "South Africa", "Kenya", "Tanzania"],
+      "foundingDate": "2015",
+      "nonprofitStatus": "Nonprofit501c3",
+      "sameAs": [
+        "<?= h(get_setting('facebook_url', '')) ?>",
+        "<?= h(get_setting('instagram_url', '')) ?>",
+        "<?= h(get_setting('youtube_url', '')) ?>"
+      ]
+    }
+    </script>
+
+    <!-- Fonts & styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -30,7 +96,7 @@ function is_active(string $page): string {
 <div class="topbar">
     <div class="container topbar-inner">
         <div class="topbar-contact">
-            <span>📧 <?= h(get_setting('site_email', 'divinemercyfoundation@gmail.com')) ?></span>
+            <span>📧 <?= h($site_email) ?></span>
         </div>
         <div class="topbar-donate">
             <a href="<?= h($donate_url) ?>" target="_blank" rel="noopener" class="topbar-donate-link">❤ Donate Now</a>

@@ -1654,6 +1654,10 @@ ul { list-style: none; }
   .footer-cta-inner { flex-direction: column; align-items: flex-start; }
   .impact-banner-inner { flex-direction: column; align-items: flex-start; }
   .topbar-contact { display: none; }
+
+  /* Footer: hide brand, links, programs columns — show contact only */
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-col:not(:last-child) { display: none; }
 }
 
 @media (max-width: 480px) {
