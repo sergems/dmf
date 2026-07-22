@@ -74,323 +74,39 @@ $orphanage_about    = get_page_content('orphanage_about_project');
     </div>
 </section>
 
-<!-- July 2026 — new photos -->
-<section class="section section-light">
+<?php
+// ── Dynamic photo albums from DB ─────────────────────────────
+$_albums = get_db()->query("SELECT * FROM orphanage_albums ORDER BY sort_order, id")->fetchAll();
+$_photo_stmt = get_db()->prepare("SELECT * FROM orphanage_photos WHERE album_id=? ORDER BY sort_order, id");
+$_bg = ['section-light','section-white'];
+foreach ($_albums as $_ai => $_album):
+    $_photo_stmt->execute([$_album['id']]);
+    $_photos = $_photo_stmt->fetchAll();
+    if (empty($_photos)) continue;
+?>
+<section class="section <?= $_bg[$_ai % 2] ?>">
     <div class="container">
         <div class="section-header">
-            <span class="section-eyebrow">July 2026 — Latest Update</span>
-            <h2>Life Inside the Orphanage</h2>
-            <p>The orphanage is alive with joy. Children are learning, eating, playing, and growing — here is a glimpse of daily life at Orphanage Elizabeth Sana in July 2026.</p>
-        </div>
-
-        <!-- Building -->
-        <div style="margin-bottom:2.5rem;">
-            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:1rem; text-transform:uppercase; letter-spacing:.06em;">The Building</h3>
-            <div class="gallery-grid">
-                <a href="/assets/images/orphanage-july2026/img-01.jpeg" class="gallery-item" target="_blank" rel="noopener">
-                    <img src="/assets/images/orphanage-july2026/img-01.jpeg" alt="Orphanage Elizabeth Sana exterior — July 2026" loading="lazy">
-                    <div class="gallery-overlay"><span>View</span></div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Classroom & Learning -->
-        <div style="margin-bottom:2.5rem;">
-            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:1rem; text-transform:uppercase; letter-spacing:.06em;">Classroom &amp; Learning</h3>
-            <div class="gallery-grid">
-                <?php foreach (['img-05','img-09','img-10','img-11'] as $n): ?>
-                <a href="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" class="gallery-item" target="_blank" rel="noopener">
-                    <img src="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" alt="Children in the classroom — Orphanage July 2026" loading="lazy">
-                    <div class="gallery-overlay"><span>View</span></div>
-                </a>
-                <?php endforeach; ?>
-            </div>
-        </div>
-
-        <!-- Daily Life & Celebrations -->
-        <div style="margin-bottom:2.5rem;">
-            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:1rem; text-transform:uppercase; letter-spacing:.06em;">Daily Life &amp; Celebrations</h3>
-            <div class="gallery-grid">
-                <?php foreach (['img-06','img-07','img-12','img-13','img-14','img-15','img-16'] as $n): ?>
-                <a href="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" class="gallery-item" target="_blank" rel="noopener">
-                    <img src="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" alt="Children at the orphanage — July 2026" loading="lazy">
-                    <div class="gallery-overlay"><span>View</span></div>
-                </a>
-                <?php endforeach; ?>
-            </div>
-        </div>
-
-        <!-- Meals -->
-        <div>
-            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:1rem; text-transform:uppercase; letter-spacing:.06em;">Meals &amp; Nutrition</h3>
-            <div class="gallery-grid">
-                <?php foreach (['img-08'] as $n): ?>
-                <a href="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" class="gallery-item" target="_blank" rel="noopener">
-                    <img src="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" alt="Children eating together — Orphanage July 2026" loading="lazy">
-                    <div class="gallery-overlay"><span>View</span></div>
-                </a>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- February 2026 photos -->
-<section class="section section-white">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow">February 2026</span>
-            <h2>Latest Progress Photos</h2>
+            <span class="section-eyebrow"><?= h($_album['eyebrow']) ?></span>
+            <h2><?= h($_album['heading']) ?></h2>
+            <?php if (!empty($_album['description'])): ?>
+            <p><?= nl2br(h($_album['description'])) ?></p>
+            <?php endif; ?>
         </div>
         <div class="gallery-grid">
-            <?php
-            $base26 = 'https://divinemercyfoundationfrbz.org/wp-content/uploads/2026/02/';
-            $photos26 = ['dmf-1-1024x576.jpeg','dmf-2-1024x576.jpeg','dmf-3-1024x576.jpeg',
-                         'dmf-4-1024x576.jpeg','dmf-5-1024x576.jpeg','dmf-8-1024x576.jpeg','dmf-9-1024x576.jpeg'];
-            foreach ($photos26 as $i => $f): ?>
-            <a href="<?= h($base26.$f) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($base26.$f) ?>" alt="Orphanage — February 2026, photo <?= $i+1 ?>" loading="lazy">
+            <?php foreach ($_photos as $_p):
+                $_src = str_starts_with($_p['src'],'http') ? $_p['src'] : '/'.$_p['src'];
+                $_alt = $_p['caption'] ?: h($_album['eyebrow']).' — Orphanage Elizabeth Sana';
+            ?>
+            <a href="<?= h($_src) ?>" class="gallery-item" target="_blank" rel="noopener">
+                <img src="<?= h($_src) ?>" alt="<?= h($_alt) ?>" loading="lazy">
                 <div class="gallery-overlay"><span>View</span></div>
             </a>
             <?php endforeach; ?>
         </div>
     </div>
 </section>
-
-<!-- November 2025 photos -->
-<section class="section section-white">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow">November 2025</span>
-            <h2>November 2025 Visit</h2>
-        </div>
-        <div class="gallery-grid">
-            <?php
-            $base25n = 'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/';
-            $photos25n = [
-                'WhatsApp-Image-2025-11-27-at-04.57.10-576x1024.jpeg',
-                'WhatsApp-Image-2025-11-27-at-05.19.37-849x1024.jpeg',
-                'WhatsApp-Image-2025-11-27-at-14.08.03-1-1024x576.jpeg',
-                'WhatsApp-Image-2025-11-27-at-14.08.03-2-1024x576.jpeg',
-                'WhatsApp-Image-2025-11-27-at-14.08.03-3-1024x576.jpeg',
-                'WhatsApp-Image-2025-11-27-at-14.24.53-576x1024.jpeg',
-                'WhatsApp-Image-2025-11-27-at-14.24.53-1-576x1024.jpeg',
-                'WhatsApp-Image-2025-11-27-at-14.24.53-2-576x1024.jpeg',
-            ];
-            foreach ($photos25n as $i => $f): ?>
-            <a href="<?= h($base25n.$f) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($base25n.$f) ?>" alt="Orphanage — November 2025, photo <?= $i+1 ?>" loading="lazy">
-                <div class="gallery-overlay"><span>View</span></div>
-            </a>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-<!-- August 2025 photos -->
-<section class="section section-light">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow">August 2025</span>
-            <h2>Perimeter Wall Completion</h2>
-        </div>
-        <div class="gallery-grid">
-            <?php
-            $base25a = 'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/08/';
-            $photos25a = [
-                'WhatsApp-Image-2025-08-26-at-06.27.46-1024x576.jpeg',
-                'WhatsApp-Image-2025-08-26-at-06.27.46-1-1024x576.jpeg',
-                'WhatsApp-Image-2025-08-26-at-06.34.32-1024x576.jpeg',
-            ];
-            foreach ($photos25a as $i => $f): ?>
-            <a href="<?= h($base25a.$f) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($base25a.$f) ?>" alt="Orphanage — August 2025, photo <?= $i+1 ?>" loading="lazy">
-                <div class="gallery-overlay"><span>View</span></div>
-            </a>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-<!-- February 2025 photos -->
-<section class="section section-white">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow">February 2025</span>
-            <h2>February 2025 Update</h2>
-        </div>
-        <div class="gallery-grid">
-            <?php
-            $base25f = 'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/02/';
-            $photos25f = [
-                'WhatsApp-Image-2025-02-26-at-12.09.44.jpeg',
-                'WhatsApp-Image-2025-02-26-at-12.11.19.jpeg',
-                'WhatsApp-Image-2025-02-26-at-12.11.19-1.jpeg',
-                'WhatsApp-Image-2025-02-26-at-12.11.20.jpeg',
-            ];
-            foreach ($photos25f as $i => $f): ?>
-            <a href="<?= h($base25f.$f) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($base25f.$f) ?>" alt="Orphanage — February 2025, photo <?= $i+1 ?>" loading="lazy">
-                <div class="gallery-overlay"><span>View</span></div>
-            </a>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-<!-- December 2024 -->
-<section class="section section-light">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow">December 2024</span>
-            <h2>December 2024</h2>
-        </div>
-        <div class="gallery-grid">
-            <?php
-            $photos24d = [
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/12/house2.png',               'Orphanage building plan'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/12/WhatsApp-Image-2024-12-10-at-22.13.32-1.jpeg', 'Orphanage — December 2024'],
-            ];
-            foreach ($photos24d as [$src, $alt]): ?>
-            <a href="<?= h($src) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($src) ?>" alt="<?= h($alt) ?>" loading="lazy">
-                <div class="gallery-overlay"><span>View</span></div>
-            </a>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-<!-- May 2024 photos -->
-<section class="section section-white">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow">May 2024</span>
-            <h2>May 2024 Construction Progress</h2>
-        </div>
-        <div class="gallery-grid">
-            <?php
-            $base24m = 'https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/05/';
-            $photos24m = [
-                'WhatsApp-Image-2024-05-23-at-04.51.38.jpeg',
-                'WhatsApp-Image-2024-05-23-at-04.51.38-2.jpeg',
-                'WhatsApp-Image-2024-05-23-at-05.12.53-768x346.jpeg',
-                'WhatsApp-Image-2024-05-23-at-05.14.41.jpeg',
-                'WhatsApp-Image-2024-05-23-at-05.16.36.jpeg',
-                'WhatsApp-Image-2024-05-23-at-05.18.36-768x432.jpeg',
-                'WhatsApp-Image-2024-05-23-at-05.20.09.jpeg',
-                'WhatsApp-Image-2024-05-23-at-05.23.18.jpeg',
-                'WhatsApp-Image-2024-05-24-at-18.19.57-768x346.jpeg',
-                'WhatsApp-Image-2024-05-24-at-18.19.57-1-768x346.jpeg',
-                'WhatsApp-Image-2024-05-24-at-18.19.57-2-768x346.jpeg',
-                'WhatsApp-Image-2024-05-24-at-18.19.57-3-768x346.jpeg',
-                'WhatsApp-Image-2024-05-30-at-21.40.17.jpeg',
-                'WhatsApp-Image-2024-05-30-at-21.40.17-1.jpeg',
-                'WhatsApp-Image-2024-05-30-at-21.40.17-2.jpeg',
-                'WhatsApp-Image-2024-05-30-at-21.40.17-3.jpeg',
-            ];
-            foreach ($photos24m as $i => $f): ?>
-            <a href="<?= h($base24m.$f) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($base24m.$f) ?>" alt="Orphanage construction — May 2024, photo <?= $i+1 ?>" loading="lazy">
-                <div class="gallery-overlay"><span>View</span></div>
-            </a>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-<!-- Jan–Feb 2024 photos -->
-<section class="section section-light">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow">January – February 2024</span>
-            <h2>Early 2024 Progress</h2>
-        </div>
-        <div class="gallery-grid">
-            <?php
-            $photos24e = [
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/06/yaounde.jpg',              'Yaoundé, Cameroon'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/01/1-1024x768.jpeg',          'Orphanage — Jan 2024'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/01/1-1-1024x768.jpeg',        'Orphanage — Jan 2024'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/01/4-1024x768.jpeg',          'Orphanage — Jan 2024'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/01/5-1024x768.jpeg',          'Orphanage — Jan 2024'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/01/6-1024x768.jpeg',          'Orphanage — Jan 2024'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/01/7-1024x768.jpeg',          'Orphanage — Jan 2024'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/02/image-1-768x346.jpeg',     'Orphanage — Feb 2024'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/02/image-2-768x346.jpeg',     'Orphanage — Feb 2024'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/02/image-3-768x346.jpeg',     'Orphanage — Feb 2024'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/02/image-4-768x346.jpeg',     'Orphanage — Feb 2024'],
-            ];
-            foreach ($photos24e as [$src, $alt]): ?>
-            <a href="<?= h($src) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($src) ?>" alt="<?= h($alt) ?>" loading="lazy">
-                <div class="gallery-overlay"><span>View</span></div>
-            </a>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-<!-- July 2023 photos -->
-<section class="section section-white">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow">July 2023</span>
-            <h2>July 2023</h2>
-        </div>
-        <div class="gallery-grid">
-            <?php
-            $base23j = 'https://divinemercyfoundationfrbz.org/wp-content/uploads/2023/07/';
-            $photos23j = [
-                'DMF.jpeg',
-                'WhatsApp-Image-2023-07-29-at-20.41.49-1.jpeg',
-                'WhatsApp-Image-2023-07-29-at-20.41.49-2.jpeg',
-                'WhatsApp-Image-2023-07-29-at-20.41.49-3.jpeg',
-                'WhatsApp-Image-2023-07-29-at-20.41.50-3.jpeg',
-                'WhatsApp-Image-2023-07-29-at-20.41.50-4.jpeg',
-                'WhatsApp-Image-2023-07-29-at-20.41.50-5.jpeg',
-                'WhatsApp-Image-2023-07-29-at-20.41.51-1-1.jpeg',
-                'WhatsApp-Image-2023-07-29-at-20.41.53-1.jpeg',
-                'WhatsApp-Image-2023-07-29-at-20.41.53-2.jpeg',
-                'WhatsApp-Image-2023-07-29-at-20.41.53-3.jpeg',
-                'WhatsApp-Image-2023-07-29-at-20.41.53-4.jpeg',
-                'WhatsApp-Image-2023-07-29-at-20.41.56.jpeg',
-            ];
-            foreach ($photos23j as $i => $f): ?>
-            <a href="<?= h($base23j.$f) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($base23j.$f) ?>" alt="Orphanage — July 2023, photo <?= $i+1 ?>" loading="lazy">
-                <div class="gallery-overlay"><span>View</span></div>
-            </a>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-<!-- May 2023 photos -->
-<section class="section section-light">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-eyebrow">May 2023</span>
-            <h2>May 2023 — Early Days</h2>
-        </div>
-        <div class="gallery-grid">
-            <?php
-            $base23m = 'https://divinemercyfoundationfrbz.org/wp-content/uploads/2023/05/';
-            $photos23m = [
-                'WhatsApp-Image-2023-05-02-at-18.49.45-576x1024.jpeg',
-                'WhatsApp-Image-2023-05-02-at-18.49.47-576x1024.jpeg',
-                'WhatsApp-Image-2023-05-02-at-18.49.47-1-576x1024.jpeg',
-                'WhatsApp-Image-2023-05-02-at-18.49.48-576x1024.jpeg',
-            ];
-            foreach ($photos23m as $i => $f): ?>
-            <a href="<?= h($base23m.$f) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($base23m.$f) ?>" alt="Orphanage — May 2023, photo <?= $i+1 ?>" loading="lazy">
-                <div class="gallery-overlay"><span>View</span></div>
-            </a>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
+<?php endforeach; ?>
 
 <!-- Philosophy / adoption section -->
 <section class="section section-white">

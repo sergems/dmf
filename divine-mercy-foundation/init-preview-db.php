@@ -61,6 +61,23 @@ CREATE TABLE IF NOT EXISTS reports (
     uploaded_at TEXT DEFAULT (datetime('now'))
 );
 
+CREATE TABLE IF NOT EXISTS orphanage_albums (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    eyebrow     TEXT NOT NULL DEFAULT '',
+    heading     TEXT NOT NULL DEFAULT '',
+    description TEXT DEFAULT '',
+    sort_order  INTEGER DEFAULT 0,
+    created_at  TEXT DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS orphanage_photos (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    album_id   INTEGER NOT NULL REFERENCES orphanage_albums(id) ON DELETE CASCADE,
+    src        TEXT NOT NULL,
+    caption    TEXT DEFAULT '',
+    sort_order INTEGER DEFAULT 0
+);
+
 CREATE TABLE IF NOT EXISTS contact_messages (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
