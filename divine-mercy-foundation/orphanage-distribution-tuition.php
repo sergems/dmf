@@ -4,8 +4,8 @@ $meta_desc  = 'Distribution of tuition fees and school mattresses at Orphanage E
 $current_page = 'orphanage-distribution-tuition';
 require_once 'includes/header.php';
 
-// All images from September 2024 distribution event — using full-res WordPress originals
-$base = 'https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/09/';
+// All images from September 2024 distribution event — served locally
+$base = '/assets/images/wp-uploads/2024/09/';
 $images_sep5 = [
     'WhatsApp-Image-2024-09-05-at-06.07.02.jpeg',
     'WhatsApp-Image-2024-09-05-at-06.07.02-1.jpeg',
@@ -100,7 +100,7 @@ $images_sep7 = [
         </div>
         <div class="gallery-grid">
             <?php foreach ($images_sep5 as $i => $filename): ?>
-            <a href="<?= h($base . $filename) ?>" class="gallery-item" target="_blank" rel="noopener">
+            <a href="<?= h($base . $filename) ?>" class="gallery-item" data-gallery="sep5-2024">
                 <img src="<?= h($base . $filename) ?>"
                      alt="Tuition & mattress distribution — 5 Sep 2024, photo <?= $i + 1 ?>"
                      loading="lazy">
@@ -121,7 +121,7 @@ $images_sep7 = [
         </div>
         <div class="gallery-grid">
             <?php foreach ($images_sep7 as $i => $filename): ?>
-            <a href="<?= h($base . $filename) ?>" class="gallery-item" target="_blank" rel="noopener">
+            <a href="<?= h($base . $filename) ?>" class="gallery-item" data-gallery="sep7-2024">
                 <img src="<?= h($base . $filename) ?>"
                      alt="Tuition & mattress distribution — 7 Sep 2024, photo <?= $i + 1 ?>"
                      loading="lazy">

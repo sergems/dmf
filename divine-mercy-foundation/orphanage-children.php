@@ -3,6 +3,8 @@ $page_title = 'Children at the Orphanage';
 $meta_desc  = 'Meet the vulnerable children at the Divine Mercy Foundation Orphanage in Cameroon — their stories, needs, and hopes.';
 require_once 'includes/header.php';
 $orphanage_children = get_page_content('orphanage_children_intro');
+
+define('WP_IMG', '/assets/images/wp-uploads');
 ?>
 
 <section class="page-hero">
@@ -22,7 +24,10 @@ $orphanage_children = get_page_content('orphanage_children_intro');
             <p><?= nl2br(h($orphanage_children['content'])) ?></p>
         </div>
         <div class="section-split-visual">
-            <img src="https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-05.19.37-576x1024.jpeg" alt="Child at the orphanage" style="width:100%;border-radius:12px;object-fit:cover;max-height:460px;">
+            <a href="<?= WP_IMG ?>/2025/11/WhatsApp-Image-2025-11-27-at-05.19.37-849x1024.jpeg" data-gallery="children-hero" class="gallery-item" style="border-radius:12px;overflow:hidden;">
+                <img src="<?= WP_IMG ?>/2025/11/WhatsApp-Image-2025-11-27-at-05.19.37-576x1024.jpeg" alt="Child at the orphanage" style="width:100%;object-fit:cover;max-height:460px;">
+                <div class="gallery-overlay"><span>View</span></div>
+            </a>
         </div>
     </div>
 </section>
@@ -68,21 +73,22 @@ $orphanage_children = get_page_content('orphanage_children_intro');
             <span class="section-eyebrow">Life at the Orphanage</span>
             <h2>Moments of Joy &amp; Hope</h2>
         </div>
-        <div class="orphanage-photo-grid">
+        <div class="gallery-grid">
             <?php
             $photos = [
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.24.53-576x1024.jpeg', 'Children at the orphanage'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.24.53-1-576x1024.jpeg', 'Daily life'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.24.53-2-576x1024.jpeg', 'Children together'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-04.57.10-576x1024.jpeg', 'Orphanage activity'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.08.03-1-1024x576.jpeg', 'Children smiling'],
-                ['https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.08.03-2-1024x576.jpeg', 'Happy children'],
+                ['WhatsApp-Image-2025-11-27-at-14.24.53-576x1024.jpeg',   'Children at the orphanage'],
+                ['WhatsApp-Image-2025-11-27-at-14.24.53-1-576x1024.jpeg', 'Daily life'],
+                ['WhatsApp-Image-2025-11-27-at-14.24.53-2-576x1024.jpeg', 'Children together'],
+                ['WhatsApp-Image-2025-11-27-at-04.57.10-576x1024.jpeg',   'Orphanage activity'],
+                ['WhatsApp-Image-2025-11-27-at-14.08.03-1-1024x576.jpeg', 'Children smiling'],
+                ['WhatsApp-Image-2025-11-27-at-14.08.03-2-1024x576.jpeg', 'Happy children'],
             ];
-            foreach ($photos as [$src, $alt]):
+            foreach ($photos as [$file, $alt]):
             ?>
-            <div class="orphanage-photo-item">
-                <img src="<?= h($src) ?>" alt="<?= h($alt) ?>" loading="lazy">
-            </div>
+            <a href="<?= WP_IMG ?>/2025/11/<?= h($file) ?>" class="gallery-item" data-gallery="children-moments">
+                <img src="<?= WP_IMG ?>/2025/11/<?= h($file) ?>" alt="<?= h($alt) ?>" loading="lazy">
+                <div class="gallery-overlay"><span>View</span></div>
+            </a>
             <?php endforeach; ?>
         </div>
     </div>

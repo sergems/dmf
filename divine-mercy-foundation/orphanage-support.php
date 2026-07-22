@@ -99,7 +99,10 @@ $orphanage_volunteer = get_page_content('orphanage_volunteer_text');
             </div>
         </div>
         <div class="section-split-visual">
-            <img src="https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.08.03-3-1024x576.jpeg" alt="Volunteers at the orphanage" style="width:100%;border-radius:12px;object-fit:cover;max-height:380px;">
+            <a href="/assets/images/wp-uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.08.03-3-1024x576.jpeg" data-gallery="support-volunteer" class="gallery-item" style="border-radius:12px;overflow:hidden;">
+                <img src="/assets/images/wp-uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.08.03-3-1024x576.jpeg" alt="Volunteers at the orphanage" style="width:100%;object-fit:cover;max-height:380px;">
+                <div class="gallery-overlay"><span>View</span></div>
+            </a>
         </div>
     </div>
 </section>

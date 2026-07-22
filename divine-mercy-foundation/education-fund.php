@@ -19,7 +19,7 @@ $edu_intro = get_page_content('education_fund_intro');
         <p><?= nl2br(h($edu_intro['content'])) ?></p>
 
         <div class="edu-qr-block">
-            <img src="https://divinemercyfoundationfrbz.org/wp-content/uploads/2024/09/QR-150x150.jpg"
+            <img src="/assets/images/wp-uploads/2024/09/QR-150x150.jpg"
                  alt="Donate QR Code — Divine Mercy Foundation"
                  class="edu-qr-img">
             <p class="edu-qr-caption">Scan to donate</p>

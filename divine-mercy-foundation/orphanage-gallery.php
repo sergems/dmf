@@ -2,6 +2,8 @@
 $page_title = 'Orphanage Gallery';
 $meta_desc  = 'Photo gallery of the Divine Mercy Foundation Orphanage — documenting construction progress and the lives of the children we serve.';
 require_once 'includes/header.php';
+
+define('WP_IMG', '/assets/images/wp-uploads');
 ?>
 
 <section class="page-hero">
@@ -38,7 +40,7 @@ require_once 'includes/header.php';
                 ['img-16', 'Children at the orphanage — July 2026'],
             ];
             foreach ($jul26_photos as [$n, $alt]): ?>
-            <a href="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" class="gallery-item" target="_blank" rel="noopener">
+            <a href="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" class="gallery-item" data-gallery="jul2026">
                 <img src="/assets/images/orphanage-july2026/<?= h($n) ?>.jpeg" alt="<?= h($alt) ?>" loading="lazy">
                 <div class="gallery-overlay"><span>View</span></div>
             </a>
@@ -58,18 +60,18 @@ require_once 'includes/header.php';
         <div class="gallery-grid">
             <?php
             $gallery_2026 = [
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2026/02/dmf-1-1024x576.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2026/02/dmf-2-1024x576.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2026/02/dmf-3-1024x576.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2026/02/dmf-4-1024x576.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2026/02/dmf-5-1024x576.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2026/02/dmf-8-1024x576.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2026/02/dmf-9-1024x576.jpeg',
+                ['dmf-1-1024x576.jpeg', 'Orphanage 2026 — update 1'],
+                ['dmf-2-1024x576.jpeg', 'Orphanage 2026 — update 2'],
+                ['dmf-3-1024x576.jpeg', 'Orphanage 2026 — update 3'],
+                ['dmf-4-1024x576.jpeg', 'Orphanage 2026 — update 4'],
+                ['dmf-5-1024x576.jpeg', 'Orphanage 2026 — update 5'],
+                ['dmf-8-1024x576.jpeg', 'Orphanage 2026 — update 6'],
+                ['dmf-9-1024x576.jpeg', 'Orphanage 2026 — update 7'],
             ];
-            foreach ($gallery_2026 as $i => $src):
+            foreach ($gallery_2026 as $i => [$file, $alt]):
             ?>
-            <a href="<?= h($src) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($src) ?>" alt="Orphanage 2026 — photo <?= $i+1 ?>" loading="lazy">
+            <a href="<?= WP_IMG ?>/2026/02/<?= h($file) ?>" class="gallery-item" data-gallery="feb2026">
+                <img src="<?= WP_IMG ?>/2026/02/<?= h($file) ?>" alt="<?= h($alt) ?>" loading="lazy">
                 <div class="gallery-overlay"><span>View</span></div>
             </a>
             <?php endforeach; ?>
@@ -87,19 +89,19 @@ require_once 'includes/header.php';
         <div class="gallery-grid">
             <?php
             $gallery_nov25 = [
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.08.03-1-1024x576.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.08.03-2-1024x576.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.08.03-3-1024x576.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.24.53-576x1024.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.24.53-1-576x1024.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-14.24.53-2-576x1024.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-04.57.10-576x1024.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-27-at-05.19.37-576x1024.jpeg',
+                ['WhatsApp-Image-2025-11-27-at-14.08.03-1-1024x576.jpeg', 'Children smiling — November 2025'],
+                ['WhatsApp-Image-2025-11-27-at-14.08.03-2-1024x576.jpeg', 'Happy children — November 2025'],
+                ['WhatsApp-Image-2025-11-27-at-14.08.03-3-1024x576.jpeg', 'Children together — November 2025'],
+                ['WhatsApp-Image-2025-11-27-at-14.24.53-576x1024.jpeg',   'Children at the orphanage — November 2025'],
+                ['WhatsApp-Image-2025-11-27-at-14.24.53-1-576x1024.jpeg', 'Daily life — November 2025'],
+                ['WhatsApp-Image-2025-11-27-at-14.24.53-2-576x1024.jpeg', 'Children together — November 2025'],
+                ['WhatsApp-Image-2025-11-27-at-04.57.10-576x1024.jpeg',   'Orphanage activity — November 2025'],
+                ['WhatsApp-Image-2025-11-27-at-05.19.37-576x1024.jpeg',   'Child at the orphanage — November 2025'],
             ];
-            foreach ($gallery_nov25 as $i => $src):
+            foreach ($gallery_nov25 as [$file, $alt]):
             ?>
-            <a href="<?= h($src) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($src) ?>" alt="Orphanage November 2025 — photo <?= $i+1 ?>" loading="lazy">
+            <a href="<?= WP_IMG ?>/2025/11/<?= h($file) ?>" class="gallery-item" data-gallery="nov2025">
+                <img src="<?= WP_IMG ?>/2025/11/<?= h($file) ?>" alt="<?= h($alt) ?>" loading="lazy">
                 <div class="gallery-overlay"><span>View</span></div>
             </a>
             <?php endforeach; ?>
@@ -118,14 +120,14 @@ require_once 'includes/header.php';
         <div class="gallery-grid">
             <?php
             $gallery_aug25 = [
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-06.27.46-1-1024x576.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-06.34.32-1024x576.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-06.27.46-1024x576.jpeg',
+                ['WhatsApp-Image-2025-08-26-at-06.27.46-1-1024x576.jpeg', 'Perimeter wall — August 2025'],
+                ['WhatsApp-Image-2025-08-26-at-06.34.32-1024x576.jpeg',   'Construction progress — August 2025'],
+                ['WhatsApp-Image-2025-08-26-at-06.27.46-1024x576.jpeg',   'Orphanage compound — August 2025'],
             ];
-            foreach ($gallery_aug25 as $i => $src):
+            foreach ($gallery_aug25 as [$file, $alt]):
             ?>
-            <a href="<?= h($src) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($src) ?>" alt="Orphanage August 2025 — photo <?= $i+1 ?>" loading="lazy">
+            <a href="<?= WP_IMG ?>/2025/08/<?= h($file) ?>" class="gallery-item" data-gallery="aug2025">
+                <img src="<?= WP_IMG ?>/2025/08/<?= h($file) ?>" alt="<?= h($alt) ?>" loading="lazy">
                 <div class="gallery-overlay"><span>View</span></div>
             </a>
             <?php endforeach; ?>
@@ -143,15 +145,15 @@ require_once 'includes/header.php';
         <div class="gallery-grid">
             <?php
             $gallery_feb25 = [
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-26-at-12.11.20.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-26-at-12.11.19-1.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-26-at-12.11.19.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-26-at-12.09.44.jpeg',
+                ['WhatsApp-Image-2025-02-26-at-12.11.20.jpeg',   'Construction in progress — February 2025'],
+                ['WhatsApp-Image-2025-02-26-at-12.11.19-1.jpeg', 'Building progress — February 2025'],
+                ['WhatsApp-Image-2025-02-26-at-12.11.19.jpeg',   'Orphanage building — February 2025'],
+                ['WhatsApp-Image-2025-02-26-at-12.09.44.jpeg',   'Construction site — February 2025'],
             ];
-            foreach ($gallery_feb25 as $i => $src):
+            foreach ($gallery_feb25 as [$file, $alt]):
             ?>
-            <a href="<?= h($src) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($src) ?>" alt="Orphanage February 2025 — photo <?= $i+1 ?>" loading="lazy">
+            <a href="<?= WP_IMG ?>/2025/02/<?= h($file) ?>" class="gallery-item" data-gallery="feb2025">
+                <img src="<?= WP_IMG ?>/2025/02/<?= h($file) ?>" alt="<?= h($alt) ?>" loading="lazy">
                 <div class="gallery-overlay"><span>View</span></div>
             </a>
             <?php endforeach; ?>
@@ -170,17 +172,17 @@ require_once 'includes/header.php';
         <div class="gallery-grid">
             <?php
             $gallery_2023 = [
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-29-at-20.41.50-5.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-29-at-20.41.51-1-1.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-29-at-20.41.56.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-02-at-18.49.48-576x1024.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-02-at-18.49.45-576x1024.jpeg',
-                'https://divinemercyfoundationfrbz.org/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-02-at-18.49.47-576x1024.jpeg',
+                ['2023/07', 'WhatsApp-Image-2023-07-29-at-20.41.50-5.jpeg',    'Early days — July 2023'],
+                ['2023/07', 'WhatsApp-Image-2023-07-29-at-20.41.51-1-1.jpeg',  'Temporary orphanage — July 2023'],
+                ['2023/07', 'WhatsApp-Image-2023-07-29-at-20.41.56.jpeg',      'Children in early days — July 2023'],
+                ['2023/05', 'WhatsApp-Image-2023-05-02-at-18.49.48-576x1024.jpeg', 'Orphanage May 2023'],
+                ['2023/05', 'WhatsApp-Image-2023-05-02-at-18.49.45-576x1024.jpeg', 'Children — May 2023'],
+                ['2023/05', 'WhatsApp-Image-2023-05-02-at-18.49.47-576x1024.jpeg', 'Early orphanage — May 2023'],
             ];
-            foreach ($gallery_2023 as $i => $src):
+            foreach ($gallery_2023 as [$yrmo, $file, $alt]):
             ?>
-            <a href="<?= h($src) ?>" class="gallery-item" target="_blank" rel="noopener">
-                <img src="<?= h($src) ?>" alt="Orphanage 2023 — photo <?= $i+1 ?>" loading="lazy">
+            <a href="<?= WP_IMG ?>/<?= h($yrmo) ?>/<?= h($file) ?>" class="gallery-item" data-gallery="2023">
+                <img src="<?= WP_IMG ?>/<?= h($yrmo) ?>/<?= h($file) ?>" alt="<?= h($alt) ?>" loading="lazy">
                 <div class="gallery-overlay"><span>View</span></div>
             </a>
             <?php endforeach; ?>

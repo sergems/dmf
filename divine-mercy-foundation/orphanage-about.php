@@ -4,6 +4,7 @@ $meta_desc  = 'Learn about the Divine Mercy Foundation Orphanage in Cameroon —
 require_once 'includes/header.php';
 $orphanage_story    = get_page_content('orphanage_story');
 $orphanage_location = get_page_content('orphanage_location');
+$wpimg = '/assets/images/wp-uploads';
 ?>
 
 <section class="page-hero">
@@ -23,7 +24,10 @@ $orphanage_location = get_page_content('orphanage_location');
             <p><?= nl2br(h($orphanage_story['content'])) ?></p>
         </div>
         <div class="section-split-visual">
-            <img src="https://divinemercyfoundationfrbz.org/wp-content/uploads/2026/02/dmf-2-1024x576.jpeg" alt="Orphanage building" style="width:100%;border-radius:12px;object-fit:cover;max-height:400px;">
+            <a href="<?= $wpimg ?>/2026/02/dmf-2-1024x576.jpeg" data-gallery="about-orphanage" class="gallery-item" style="border-radius:12px;overflow:hidden;">
+                <img src="<?= $wpimg ?>/2026/02/dmf-2-1024x576.jpeg" alt="Orphanage building" style="width:100%;object-fit:cover;max-height:400px;">
+                <div class="gallery-overlay"><span>View</span></div>
+            </a>
         </div>
     </div>
 </section>
@@ -74,7 +78,10 @@ $orphanage_location = get_page_content('orphanage_location');
 <section class="section section-white">
     <div class="container section-split reverse">
         <div class="section-split-visual">
-            <img src="https://divinemercyfoundationfrbz.org/wp-content/uploads/2026/02/dmf-6-150x150.jpeg" alt="Orphanage location" style="width:100%;border-radius:12px;object-fit:cover;max-height:400px;">
+            <a href="<?= $wpimg ?>/2026/02/dmf-6-150x150.jpeg" data-gallery="about-orphanage" class="gallery-item" style="border-radius:12px;overflow:hidden;">
+                <img src="<?= $wpimg ?>/2026/02/dmf-6-150x150.jpeg" alt="Orphanage location" style="width:100%;object-fit:cover;max-height:400px;">
+                <div class="gallery-overlay"><span>View</span></div>
+            </a>
         </div>
         <div class="section-split-text">
             <span class="section-eyebrow">Where We Are</span>
