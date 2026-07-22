@@ -65,8 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                     </div>
                     <div>
-                        <strong>Headquarters</strong>
-                        <span>Texas, USA (Registered Nonprofit)</span>
+                        <strong>Cameroon Office</strong>
+                        <span>P.O. Box 14040, Assok | Nkoabang, Yaoundé, Cameroon</span>
                     </div>
                 </div>
                 <div class="contact-card">

@@ -93,7 +93,7 @@ require_once 'includes/header.php';
                     <div class="reach-contact-card">
                         <div class="reach-contact-icon">📧</div>
                         <h3>Email</h3>
-                        <a href="mailto:divinemercyfoundation@gmail.com">divinemercyfoundation@gmail.com</a>
+                        <a href="mailto:divinemercyfoundation237@gmail.com">divinemercyfoundation237@gmail.com</a>
                         <a href="mailto:divinemercyfoundation237@gmail.com" style="display:block;margin-top:.25rem;">divinemercyfoundation237@gmail.com</a>
                     </div>
                 </div>
