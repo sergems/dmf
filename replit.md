@@ -1,50 +1,67 @@
 # Divine Mercy Foundation — Website
 
-A PHP 8.2 website for Divine Mercy Foundation with a full admin panel.
+A complete PHP + SQLite/MySQL website with admin panel for Divine Mercy Foundation, a 501(c)(3) nonprofit based in Texas, USA.
 
-## How to run
+## Stack
 
-The **"Divine Mercy Foundation"** workflow starts the site. It uses PHP's built-in server with SQLite in preview mode — no MySQL needed on Replit.
+- **Language:** PHP 8.2
+- **Database:** SQLite (preview/dev) or MySQL (production)
+- **Frontend:** Plain HTML/CSS/JS (no build step)
+- **Admin panel:** `/admin/` — PHP session auth
 
-```
-cd divine-mercy-foundation && PREVIEW_MODE=1 php -S 0.0.0.0:5000
-```
+## How to Run
 
-Open the preview pane to see the live site.
-
-## Admin panel
-
-Visit `/admin/` in the preview.
-
-- **Username:** `admin`
-- **Password:** `Admin@2024`
-
-Change the password in Settings → Change Password after first login.
-
-## Project layout
+The workflow **"Divine Mercy Foundation"** starts the PHP built-in dev server on port 5000:
 
 ```
-divine-mercy-foundation/   PHP website source
-  config.php               DB + site config (PREVIEW_MODE=1 uses SQLite)
-  preview.db               SQLite database (used in Replit preview)
-  database.sql             MySQL schema (for production hosting)
-  admin/                   Admin panel
-  includes/                Shared PHP components (db, header, footer)
-  assets/                  CSS, JS, images
-artifacts/api-server/      Node.js proxy (used in production deployment only)
+cd /home/runner/workspace/divine-mercy-foundation && PREVIEW_MODE=1 php -S 0.0.0.0:5000
 ```
 
-## Database
+`PREVIEW_MODE=1` switches the database driver to SQLite (`preview.db`). No MySQL credentials are needed for local development.
 
-- **Preview (Replit):** SQLite at `divine-mercy-foundation/preview.db` — auto-used when `PREVIEW_MODE=1`
-- **Production:** MySQL — configure credentials in `divine-mercy-foundation/config.php`
+### First-time setup
 
-## Production deployment
+If `preview.db` doesn't exist, initialise it once:
 
-For a live hosting provider (cPanel, VPS, etc.):
-1. Set MySQL credentials in `config.php`
-2. Import `database.sql` into your MySQL database
-3. Upload `divine-mercy-foundation/` to your web root
-4. Set `chmod 755 uploads/`
+```
+cd divine-mercy-foundation && php init-preview-db.php
+```
 
-## User preferences
+This creates all tables and seeds sample data.
+
+### Admin login (preview)
+
+- URL: `/admin/`
+- Username: `admin`
+- Password: `Admin@2024`
+
+## Project Layout
+
+```
+divine-mercy-foundation/
+├── index.php              # Homepage
+├── about.php / about-*.php
+├── activities.php / activity.php
+├── donate.php / contact.php
+├── education-fund.php / orphanage-*.php
+├── admin/                 # Admin panel (login-protected)
+├── assets/css|js|images/  # Static assets
+├── includes/              # Shared PHP: db.php, header, footer, functions
+├── config.php             # DB + site config (preview/production switch)
+├── database.sql           # MySQL schema (for production setup)
+├── init-preview-db.php    # SQLite seed script (dev only)
+└── preview.db             # SQLite database (git-ignored, created on first run)
+```
+
+## Production Deployment
+
+For production (Apache + MySQL):
+1. Set `PREVIEW_MODE` to anything other than `1` (or remove it).
+2. Fill in `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASS` in `config.php`.
+3. Import `database.sql` into MySQL.
+4. Set `SITE_URL` in `config.php`.
+5. Ensure `mod_rewrite` is enabled for `.htaccess` routing.
+
+## User Preferences
+
+_No preferences recorded yet._
