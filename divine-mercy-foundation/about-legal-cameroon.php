@@ -46,7 +46,7 @@ require_once 'includes/header.php';
             <span class="section-eyebrow">Scope of Operations</span>
             <h2>What We Are Authorised to Do in Cameroon</h2>
         </div>
-        <div class="programs-grid">
+        <div class="programs-grid" style="grid-template-columns: repeat(6, 1fr);">
             <div class="program-card">
                 <h3>Orphanage Operations</h3>
                 <p>We are authorised to establish, manage, and fund orphanage facilities providing shelter, care, and education to vulnerable children across Cameroon.</p>
