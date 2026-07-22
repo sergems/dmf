@@ -46,30 +46,30 @@ require_once 'includes/header.php';
             <span class="section-eyebrow">Scope of Operations</span>
             <h2>What We Are Authorised to Do in Cameroon</h2>
         </div>
-        <div class="programs-grid" style="grid-template-columns: repeat(6, 1fr);">
-            <div class="program-card">
-                <h3>Orphanage Operations</h3>
-                <p>We are authorised to establish, manage, and fund orphanage facilities providing shelter, care, and education to vulnerable children across Cameroon.</p>
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+            <div class="program-card" style="display:flex; flex-direction:row; align-items:flex-start; gap:2rem;">
+                <h3 style="min-width:220px; margin:0;">Orphanage Operations</h3>
+                <p style="margin:0;">We are authorised to establish, manage, and fund orphanage facilities providing shelter, care, and education to vulnerable children across Cameroon.</p>
             </div>
-            <div class="program-card">
-                <h3>Food Distribution</h3>
-                <p>We are permitted to run soup kitchens and food distribution programmes in partnership with local communities and parishes.</p>
+            <div class="program-card" style="display:flex; flex-direction:row; align-items:flex-start; gap:2rem;">
+                <h3 style="min-width:220px; margin:0;">Food Distribution</h3>
+                <p style="margin:0;">We are permitted to run soup kitchens and food distribution programmes in partnership with local communities and parishes.</p>
             </div>
-            <div class="program-card">
-                <h3>Educational Support</h3>
-                <p>Distribution of school materials, payment of tuition fees, and educational capacity-building programmes for underprivileged youth.</p>
+            <div class="program-card" style="display:flex; flex-direction:row; align-items:flex-start; gap:2rem;">
+                <h3 style="min-width:220px; margin:0;">Educational Support</h3>
+                <p style="margin:0;">Distribution of school materials, payment of tuition fees, and educational capacity-building programmes for underprivileged youth.</p>
             </div>
-            <div class="program-card">
-                <h3>Elderly &amp; Disability Care</h3>
-                <p>Volunteer-led care teams supporting elderly and physically or mentally disabled individuals in rural Cameroonian communities.</p>
+            <div class="program-card" style="display:flex; flex-direction:row; align-items:flex-start; gap:2rem;">
+                <h3 style="min-width:220px; margin:0;">Elderly &amp; Disability Care</h3>
+                <p style="margin:0;">Volunteer-led care teams supporting elderly and physically or mentally disabled individuals in rural Cameroonian communities.</p>
             </div>
-            <div class="program-card">
-                <h3>Community Infrastructure</h3>
-                <p>Construction and support of small community chapels and gathering spaces, including in the village of Ebomkop II.</p>
+            <div class="program-card" style="display:flex; flex-direction:row; align-items:flex-start; gap:2rem;">
+                <h3 style="min-width:220px; margin:0;">Community Infrastructure</h3>
+                <p style="margin:0;">Construction and support of small community chapels and gathering spaces, including in the village of Ebomkop II.</p>
             </div>
-            <div class="program-card">
-                <h3>Volunteer Mobilisation</h3>
-                <p>Recruitment and coordination of local volunteers, particularly youth, to serve as care-givers, health workers, and community assistants.</p>
+            <div class="program-card" style="display:flex; flex-direction:row; align-items:flex-start; gap:2rem;">
+                <h3 style="min-width:220px; margin:0;">Volunteer Mobilisation</h3>
+                <p style="margin:0;">Recruitment and coordination of local volunteers, particularly youth, to serve as care-givers, health workers, and community assistants.</p>
             </div>
         </div>
     </div>
