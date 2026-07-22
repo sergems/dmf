@@ -37,29 +37,6 @@ $orphanage_about    = get_page_content('orphanage_about_project');
     </div>
 </section>
 
-<!-- Key stats -->
-<section class="section section-light">
-    <div class="container">
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1.5rem; max-width:900px; margin:0 auto; text-align:center;">
-            <div style="background:#fff; border-radius:12px; padding:1.75rem 1rem; box-shadow:0 2px 12px rgba(13,31,53,.07);">
-                <div style="font-size:2rem; font-weight:700; color:var(--red);">80</div>
-                <div style="font-size:.85rem; color:var(--text-light); margin-top:.35rem;">Planned Capacity (children)</div>
-            </div>
-            <div style="background:#fff; border-radius:12px; padding:1.75rem 1rem; box-shadow:0 2px 12px rgba(13,31,53,.07);">
-                <div style="font-size:2rem; font-weight:700; color:var(--red);">60</div>
-                <div style="font-size:.85rem; color:var(--text-light); margin-top:.35rem;">Children Currently Supported</div>
-            </div>
-            <div style="background:#fff; border-radius:12px; padding:1.75rem 1rem; box-shadow:0 2px 12px rgba(13,31,53,.07);">
-                <div style="font-size:2rem; font-weight:700; color:var(--red);">$3,500</div>
-                <div style="font-size:.85rem; color:var(--text-light); margin-top:.35rem;">Monthly Feeding &amp; Tuition Cost</div>
-            </div>
-            <div style="background:#fff; border-radius:12px; padding:1.75rem 1rem; box-shadow:0 2px 12px rgba(13,31,53,.07);">
-                <div style="font-size:2rem; font-weight:700; color:var(--red);">735</div>
-                <div style="font-size:.85rem; color:var(--text-light); margin-top:.35rem;">Children Assisted (2016–2022)</div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- About the project -->
 <section class="section section-white">
