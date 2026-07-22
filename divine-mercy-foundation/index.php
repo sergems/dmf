@@ -142,17 +142,6 @@ $stats = [
 </script>
 <?php endif; ?>
 
-<!-- STATS STRIP -->
-<section class="stats-strip">
-    <div class="container stats-grid">
-        <?php foreach ($stats as $stat): ?>
-        <div class="stat-item">
-            <span class="stat-value"><?= h($stat['value']) ?></span>
-            <span class="stat-label"><?= h($stat['label']) ?></span>
-        </div>
-        <?php endforeach; ?>
-    </div>
-</section>
 
 <!-- MISSION INTRO -->
 <section class="section section-white">
