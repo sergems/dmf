@@ -147,13 +147,8 @@ $stats = [
 <section class="section section-white">
     <div class="container section-split">
         <div class="section-split-visual">
-            <div class="mission-card">
-                <div class="mission-card-icon">
-                    <img src="/assets/images/logo.png" alt="Divine Mercy Foundation">
-                </div>
-                <blockquote>
-                    "Give hope. Change a life. Every child deserves a chance."
-                </blockquote>
+            <div class="mission-photo">
+                <img src="/assets/images/orphanage-july2026/img-06.jpeg" alt="Children at Divine Mercy Foundation Orphanage">
             </div>
         </div>
         <div class="section-split-text">

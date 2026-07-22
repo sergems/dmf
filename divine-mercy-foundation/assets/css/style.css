@@ -528,6 +528,21 @@ ul { list-style: none; }
   border-radius: 12px;
   position: relative;
 }
+/* Mission photo */
+.mission-photo {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,.18);
+  aspect-ratio: 4/3;
+}
+.mission-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+}
+.mission-photo:hover img { transform: scale(1.03); }
+
 .hero-scroll-indicator span::after {
   content: '';
   display: block;
