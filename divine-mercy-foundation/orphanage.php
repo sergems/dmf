@@ -44,11 +44,11 @@ $orphanage_about    = get_page_content('orphanage_about_project');
     </div>
 </section>
 
-<!-- Major Update — 2025 -->
+<!-- Major Update — 2026 -->
 <section class="section section-light">
     <div class="container">
         <div class="section-header">
-            <span class="section-eyebrow">Major Update — 2025</span>
+            <span class="section-eyebrow">Major Update — 2026</span>
             <h2>The Children Are Now Home</h2>
             <p style="max-width:720px;margin:0 auto;">We are overjoyed to announce that the children are now living in the orphanage here in Assok, Yaoundé, Cameroon. After years of construction, sacrifice, and the generosity of donors across the world — our children have a real home.</p>
         </div>
