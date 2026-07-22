@@ -15,30 +15,34 @@ $orphanage_about    = get_page_content('orphanage_about_project');
     </div>
 </section>
 
-<!-- Progress update -->
+<!-- Our Location -->
 <section class="section section-white">
     <div class="container section-split">
         <div class="section-split-text">
-            <span class="section-eyebrow">Progress Update</span>
-            <h2>Building a Home, Step by Step</h2>
-            <p><?= nl2br(h($orphanage_progress['content'])) ?></p>
-            <div class="hero-actions" style="margin-top:1.75rem;">
-                <a href="/orphanage-support.php" class="btn btn-primary">Support the Orphanage</a>
-                <a href="/orphanage-gallery.php" class="btn btn-outline">View Gallery</a>
+            <span class="section-eyebrow">Our Location</span>
+            <h2>Orphanage Elizabeth Sana</h2>
+            <p>The children are now settled in their new home in <strong>Assok, Yaoundé, Cameroon</strong>. They have proper bedrooms, a dining room, a classroom, and safe outdoor space — everything a child deserves.</p>
+            <p>The orphanage is officially registered on Google Maps under:</p>
+            <p><strong>Orphelinat Élizabetta Sanna de Divine Mercy Foundation</strong><br>
+            P.O. Box 14040, Assok, Yaoundé, Cameroon</p>
+            <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+                <a href="https://maps.app.goo.gl/search/?q=Orphelinat+%C3%89lizabetta+Sanna+de+Divine+Mercy+Foundation" target="_blank" rel="noopener" class="btn btn-outline">View on Google Maps</a>
+                <a href="/donate.php" class="btn btn-primary">Support the Orphanage</a>
             </div>
         </div>
         <div class="section-split-visual">
-            <div class="programs-img-wrap">
-                <img src="/assets/images/orphanage-july2026/img-01.jpeg"
-                     alt="Orphanage Elizabeth Sana — July 2026"
-                     style="width:100%;border-radius:12px;object-fit:cover;max-height:380px;">
+            <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(13,31,53,.1);height:360px;">
+                <iframe
+                    src="https://maps.google.com/maps?q=Orph%C3%A9linat+%C3%89lizabetta+Sanna+de+Divine+Mercy+Foundation,+Assok,+Yaound%C3%A9,+Cameroon&output=embed"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Orphanage Elizabeth Sana — Assok, Yaoundé"></iframe>
             </div>
         </div>
     </div>
 </section>
 
-
-<!-- ── NEW UPDATE: Children now living in the orphanage ── -->
+<!-- Major Update — 2025 -->
 <section class="section section-light">
     <div class="container">
         <div class="section-header">
@@ -46,9 +50,7 @@ $orphanage_about    = get_page_content('orphanage_about_project');
             <h2>The Children Are Now Home</h2>
             <p style="max-width:720px;margin:0 auto;">We are overjoyed to announce that the children are now living in the orphanage here in Assok, Yaoundé, Cameroon. After years of construction, sacrifice, and the generosity of donors across the world — our children have a real home.</p>
         </div>
-
-        <!-- Photo grid -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; margin-bottom:3rem;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem;">
             <?php
             $update_imgs = [
                 ['src'=>'/assets/images/orphanage-2025-update/img-05.jpeg','alt'=>'The orphanage building — Assok, Yaoundé'],
@@ -71,29 +73,26 @@ $orphanage_about    = get_page_content('orphanage_about_project');
             </a>
             <?php endforeach; ?>
         </div>
+    </div>
+</section>
 
-        <!-- Text + Map split -->
-        <div class="container section-split" style="padding:0;">
-            <div class="section-split-text">
-                <span class="section-eyebrow">Our Location</span>
-                <h3>Orphanage Elizabeth Sana</h3>
-                <p>The children are now settled in their new home in <strong>Assok, Yaoundé, Cameroon</strong>. They have proper bedrooms, a dining room, a classroom, and safe outdoor space — everything a child deserves.</p>
-                <p>The orphanage is officially registered on Google Maps under:</p>
-                <p><strong>Orphelinat Élizabetta Sanna de Divine Mercy Foundation</strong><br>
-                P.O. Box 14040, Assok, Yaoundé, Cameroon</p>
-                <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
-                    <a href="https://maps.app.goo.gl/search/?q=Orphelinat+%C3%89lizabetta+Sanna+de+Divine+Mercy+Foundation" target="_blank" rel="noopener" class="btn btn-outline">View on Google Maps</a>
-                    <a href="/donate.php" class="btn btn-primary">Support the Orphanage</a>
-                </div>
+<!-- Progress update -->
+<section class="section section-white">
+    <div class="container section-split">
+        <div class="section-split-text">
+            <span class="section-eyebrow">Progress Update</span>
+            <h2>Building a Home, Step by Step</h2>
+            <p><?= nl2br(h($orphanage_progress['content'])) ?></p>
+            <div class="hero-actions" style="margin-top:1.75rem;">
+                <a href="/orphanage-support.php" class="btn btn-primary">Support the Orphanage</a>
+                <a href="/orphanage-gallery.php" class="btn btn-outline">View Gallery</a>
             </div>
-            <div class="section-split-visual">
-                <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(13,31,53,.1);height:320px;">
-                    <iframe
-                        src="https://maps.google.com/maps?q=Orph%C3%A9linat+%C3%89lizabetta+Sanna+de+Divine+Mercy+Foundation,+Assok,+Yaound%C3%A9,+Cameroon&output=embed"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Orphanage Elizabeth Sana — Assok, Yaoundé"></iframe>
-                </div>
+        </div>
+        <div class="section-split-visual">
+            <div class="programs-img-wrap">
+                <img src="/assets/images/orphanage-july2026/img-01.jpeg"
+                     alt="Orphanage Elizabeth Sana — July 2026"
+                     style="width:100%;border-radius:12px;object-fit:cover;max-height:380px;">
             </div>
         </div>
     </div>
